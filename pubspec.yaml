@@ -1,0 +1,66 @@
+name: protocol_marasim
+description: "البروتوكول والمراسم | PROTOCOL & CEREMONIAL — منصة البروتوكول الدولي والمراسم والذكاء الاصطناعي"
+publish_to: "none"
+version: 1.0.1+2
+
+environment:
+  # رُفعت إلى >=3.10.0 / >=3.38.0 في P6: هذا ما يتطلبه fllama_cpp
+  # 1.1.1 (pub.dev API: sdk ">=3.10.0 <4.0.0"، flutter ">=3.38.0").
+  # CI يستخدم Flutter 3.50.1 فيستوفي الشرط.
+  sdk: ">=3.10.0 <4.0.0"
+  flutter: ">=3.38.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  material_ui: ^1.11.1
+  sqflite: ^2.4.6
+  path: ^1.9.0
+  path_provider: ^2.1.5
+  provider: ^6.1.2
+  share_plus: ^10.1.4
+  url_launcher: ^6.3.1
+  pdf: ^3.11.1
+  # 23.x needs compileSdk 37, but the Actions runner cannot install the
+  # android-37 platform (sdkmanager: package not found); 22.3.3 is the
+  # last release that compiles against SDK 36.
+  flutter_local_notifications: ^22.3.3
+  timezone: ^0.11.2
+  flutter_timezone: ^5.1.1
+  # P6 — التوليد المحلي دون إنترنت (llama.cpp عبر fllama):
+  # fllama_cpp 1.1.1 موثق من pub.dev (2026-11-25)؛ يتطلب Dart
+  # >=3.10 وFlutter >=3.38 (انظر environment أعلاه)، ويجلب crypto
+  # ^3.0.6 تبعياً. crypto مضاف صراحة هنا لأن ModelManager يستخدمه
+  # مباشرة للتحقق SHA-256 من ملف النموذج. لا مفاتيح API ولا خدمات
+  # سحابية — التنزيل من Hugging Face عام عبر HTTPS فقط.
+  fllama_cpp: ^1.1.1
+  crypto: ^3.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/marasim.db
+    - assets/marasim.db.sha256
+    - assets/logo.png
+    - assets/images/
+    - assets/fonts/
+  fonts:
+    # Cairo is the UI font (clean, modern Arabic, OFL). Amiri is kept only
+    # for display headings (splash title, article titles, section headers).
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 700
+    - family: Amiri
+      fonts:
+        - asset: assets/fonts/Amiri-Regular.ttf
+        - asset: assets/fonts/Amiri-Bold.ttf
+          weight: 700
