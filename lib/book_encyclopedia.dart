@@ -344,9 +344,9 @@ class _BookEncyclopediaViewState extends State<BookEncyclopediaView> {
               children: [
                 const Row(
                   children: [
-                    const Icon(Icons.menu_book, color: AppColors.gold),
-                    const SizedBox(width: 8),
-                    const Expanded(
+                    Icon(Icons.menu_book, color: AppColors.gold),
+                    SizedBox(width: 8),
+                    Expanded(
                       child: Text(
                         'البروتوكول والمراسم',
                         style: TextStyle(
