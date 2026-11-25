@@ -1,0 +1,4873 @@
+{
+  "meta": {
+    "generated_at": "2026-11-24T22:51:33.385032+00:00",
+    "db_path": "/home/hatch/workspace/protocol/repo/assets/marasim.db",
+    "db_kind": "built",
+    "db_kb_topics": 54,
+    "db_size_bytes": 1167360,
+    "questions_file": "/home/hatch/workspace/protocol/repo/test_data/ai_questions.json",
+    "normalisation": "imported from tools/build_db.py (norm/search_norm/search_expr)",
+    "retrieval": "FTS5 on kb_topics_fts, mirroring lib/db.dart _ftsSearch: queryTerms (stopwords removed) + 3 stages AND -> OR -> longest term, top 3",
+    "refusal_definition": "Retrieval-level proxy only: refusal_correct = search returned zero results. True refusal needs a generative model (not yet present)."
+  },
+  "summary": {
+    "total_questions": 100,
+    "answerable_questions": 80,
+    "hallucination_questions": 20,
+    "overall_hit_at_3": 0.6375,
+    "overall_hits": 51,
+    "per_category": {
+      "basic": {
+        "n": 20,
+        "hits": 13,
+        "hit_at_3": 0.65
+      },
+      "applied": {
+        "n": 20,
+        "hits": 15,
+        "hit_at_3": 0.75
+      },
+      "complex": {
+        "n": 20,
+        "hits": 8,
+        "hit_at_3": 0.4
+      },
+      "sources": {
+        "n": 20,
+        "hits": 15,
+        "hit_at_3": 0.75
+      }
+    },
+    "refusal_correct_count": 0,
+    "refusal_correct_rate": 0.0,
+    "failed_count": 49,
+    "failed_answerable": 29,
+    "failed_hallucination_retrieval_noise": 20
+  },
+  "per_question": [
+    {
+      "id": "B01",
+      "category": "basic",
+      "lang": "ar",
+      "text": "اشرح بكلماتك ما المقصود بالبروتوكول في العلاقات بين الدول، وما الذي يميزه عن مجرد المجاملة الاجتماعية؟",
+      "expected_topic_id": "P1C1-M2",
+      "expected_pages": [
+        7,
+        8
+      ],
+      "expected_answer_type": "definition",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M2",
+          "title": "تعريف البروتوكولات"
+        },
+        {
+          "topic_id": "P2C1-M2-08",
+          "title": "أسبقية المجاملة"
+        },
+        {
+          "topic_id": "P1C2-M2",
+          "title": "المراسم والبروتوكولات في العصر الإسلامي"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M2",
+        "P2C1-M2-08",
+        "P1C2-M2"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "B02",
+      "category": "basic",
+      "lang": "ar",
+      "text": "ما المقصود بالمراسم، وما أصل الكلمة في العربية؟",
+      "expected_topic_id": "P1C1-M1",
+      "expected_pages": [
+        4,
+        6
+      ],
+      "expected_answer_type": "definition",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M1",
+          "title": "تعريف المراسم"
+        },
+        {
+          "topic_id": "P2C1-M2-07",
+          "title": "الأسبقية في المناسبات الرسمية"
+        },
+        {
+          "topic_id": "P2C1-M2-06",
+          "title": "الأسبقية في جامعة الدول العربية"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M1",
+        "P2C1-M2-07",
+        "P2C1-M2-06"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "B03",
+      "category": "basic",
+      "lang": "ar",
+      "text": "ما التشريفات؟ وما هدفها الأساسي عند استقبال الشخصيات الرسمية؟",
+      "expected_topic_id": "P1C1-M3",
+      "expected_pages": [
+        9,
+        9
+      ],
+      "expected_answer_type": "definition",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M4",
+          "title": "مراسم استقبال كبار الشخصيات"
+        },
+        {
+          "topic_id": "P2C1-M4V",
+          "title": "ملخص بصري لمراحل مراسم الاستقبال"
+        },
+        {
+          "topic_id": "P2C1-M1",
+          "title": "الهيكل المؤسسي لإدارة المراسم والبروتوكول في الدولة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M4",
+        "P2C1-M4V",
+        "P2C1-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "B04",
+      "category": "basic",
+      "lang": "ar",
+      "text": "وضّح الفرق بين البروتوكول والمراسم والتشريفات بمثال واحد يجمعها جميعاً.",
+      "expected_topic_id": "P1C1-M4",
+      "expected_pages": [
+        10,
+        11
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M4",
+          "title": "الفروق بين المراسم والبروتوكولات والتشريفات"
+        },
+        {
+          "topic_id": "P1C1-00",
+          "title": "تمهيد الفصل الأول: ماهية المراسم والبروتوكولات والتشريفات"
+        },
+        {
+          "topic_id": "FM-01",
+          "title": "المادة الافتتاحية: الغلاف، الإهداء، التقديم، فكرة الكتاب، المقدمة"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M4",
+        "P1C1-00",
+        "FM-01"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "B05",
+      "category": "basic",
+      "lang": "ar",
+      "text": "ما الأسبقية البروتوكولية؟ وهل هي امتياز شخصي أم آلية تنظيمية؟",
+      "expected_topic_id": "P2C1-M2-00",
+      "expected_pages": [
+        54,
+        55
+      ],
+      "expected_answer_type": "definition",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        },
+        {
+          "topic_id": "APP1-C",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 34–53 والأحكام الختامية (الامتيازات، الواجبات، إنهاء المهام، التصديق والانضمام)"
+        },
+        {
+          "topic_id": "P2C1-M2-01",
+          "title": "الأسبقية داخل الدولة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-00",
+        "APP1-C",
+        "P2C1-M2-01"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "B06",
+      "category": "basic",
+      "lang": "ar",
+      "text": "كيف ظهرت قواعد المراسم والبروتوكول في الحضارات القديمة، وما الذي كانت تنظمه؟",
+      "expected_topic_id": "P1C2-M1",
+      "expected_pages": [
+        16,
+        21
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C2-M1",
+          "title": "الجذور الأولى للمراسم والبروتوكول في الحضارات القديمة"
+        },
+        {
+          "topic_id": "P1C2-X",
+          "title": "خاتمة الفصل الثاني"
+        },
+        {
+          "topic_id": "P1C2-00",
+          "title": "تمهيد الفصل الثاني: التطور التاريخي للمراسم والبروتوكولات"
+        }
+      ],
+      "top3_ids": [
+        "P1C2-M1",
+        "P1C2-X",
+        "P1C2-00"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "B07",
+      "category": "basic",
+      "lang": "ar",
+      "text": "ما أبرز ملامح المراسم والبروتوكول في العصر الإسلامي؟",
+      "expected_topic_id": "P1C2-M2",
+      "expected_pages": [
+        22,
+        29
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C2-M2",
+          "title": "المراسم والبروتوكولات في العصر الإسلامي"
+        },
+        {
+          "topic_id": "P1C2-X",
+          "title": "خاتمة الفصل الثاني"
+        },
+        {
+          "topic_id": "P1C2-M1",
+          "title": "الجذور الأولى للمراسم والبروتوكول في الحضارات القديمة"
+        }
+      ],
+      "top3_ids": [
+        "P1C2-M2",
+        "P1C2-X",
+        "P1C2-M1"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "B08",
+      "category": "basic",
+      "lang": "ar",
+      "text": "كيف نشأت البروتوكولات الدبلوماسية الحديثة، وما الذي غيّرته عن الطقوس القصورية القديمة؟",
+      "expected_topic_id": "P1C2-M4",
+      "expected_pages": [
+        33,
+        36
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C2-M1",
+          "title": "الجذور الأولى للمراسم والبروتوكول في الحضارات القديمة"
+        },
+        {
+          "topic_id": "P1C2-M4",
+          "title": "نشأة البروتوكولات الدبلوماسية الحديثة ومأسستها الدولية"
+        },
+        {
+          "topic_id": "P1C2-00",
+          "title": "تمهيد الفصل الثاني: التطور التاريخي للمراسم والبروتوكولات"
+        }
+      ],
+      "top3_ids": [
+        "P1C2-M1",
+        "P1C2-M4",
+        "P1C2-00"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "B09",
+      "category": "basic",
+      "lang": "ar",
+      "text": "ما المراسم المعاصرة؟ وكيف ترتبط بإدارة الصورة الذهنية للدولة؟",
+      "expected_topic_id": "P1C2-M5",
+      "expected_pages": [
+        37,
+        39
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-X",
+          "title": "خاتمة الفصل الأول"
+        },
+        {
+          "topic_id": "P1-X",
+          "title": "خاتمة الباب الأول"
+        },
+        {
+          "topic_id": "P1C2-M5",
+          "title": "المراسم المعاصرة وإدارة الصورة الذهنية"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-X",
+        "P1-X",
+        "P1C2-M5"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "B10",
+      "category": "basic",
+      "lang": "ar",
+      "text": "ما الهيكل المؤسسي الذي يدير المراسم والبروتوكول داخل الدولة؟",
+      "expected_topic_id": "P2C1-M1",
+      "expected_pages": [
+        48,
+        53
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-X",
+          "title": "خاتمة الفصل الأول"
+        },
+        {
+          "topic_id": "P1C1-X",
+          "title": "خاتمة الفصل الأول"
+        },
+        {
+          "topic_id": "P2C1-M4",
+          "title": "مراسم استقبال كبار الشخصيات"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-X",
+        "P1C1-X",
+        "P2C1-M4"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "B11",
+      "category": "basic",
+      "lang": "ar",
+      "text": "ما المبادئ الحاكمة للمراسم والبروتوكول الدولي، وأهمها مبدأ المساواة في السيادة؟",
+      "expected_topic_id": "P2C3-M1",
+      "expected_pages": [
+        192,
+        198
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C3-M1",
+          "title": "الدبلوماسية والمراسم والبروتوكولات الدولية"
+        },
+        {
+          "topic_id": "P2C1-M2-02",
+          "title": "الأسبقية بين الدول"
+        },
+        {
+          "topic_id": "P2C1-M2-06",
+          "title": "الأسبقية في جامعة الدول العربية"
+        }
+      ],
+      "top3_ids": [
+        "P2C3-M1",
+        "P2C1-M2-02",
+        "P2C1-M2-06"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "B12",
+      "category": "basic",
+      "lang": "ar",
+      "text": "ما مراسم الأعلام والنشيد والشعار الوطني؟ ومتى تُستخدم؟",
+      "expected_topic_id": "P2C2-M3",
+      "expected_pages": [
+        164,
+        176
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C2-M3",
+          "title": "مراسم الأعلام والنشيد والشعار الوطني"
+        },
+        {
+          "topic_id": "P2C2-X",
+          "title": "خاتمة الفصل الثاني"
+        },
+        {
+          "topic_id": "P2C2-00",
+          "title": "تمهيد الفصل الثاني: المراسم العملية وإدارة الأحداث الكبرى"
+        }
+      ],
+      "top3_ids": [
+        "P2C2-M3",
+        "P2C2-X",
+        "P2C2-00"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "B13",
+      "category": "basic",
+      "lang": "ar",
+      "text": "ما أسبقية المجاملة؟ ومتى يُلجأ إليها بدل القواعد الرسمية؟",
+      "expected_topic_id": "P2C1-M2-08",
+      "expected_pages": [
+        86,
+        88
+      ],
+      "expected_answer_type": "definition",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-08",
+          "title": "أسبقية المجاملة"
+        },
+        {
+          "topic_id": "P1C1-M2",
+          "title": "تعريف البروتوكولات"
+        },
+        {
+          "topic_id": "P2C2-M4",
+          "title": "مراسم تقديم الهدايا والتوثيق الرسمي"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-08",
+        "P1C1-M2",
+        "P2C2-M4"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "B14",
+      "category": "basic",
+      "lang": "ar",
+      "text": "لخّص الجوانب الثمانية لقواعد الأسبقية البروتوكولية.",
+      "expected_topic_id": "P2C1-M2-10",
+      "expected_pages": [
+        92,
+        93
+      ],
+      "expected_answer_type": "summary",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-10",
+          "title": "خلاصة الجوانب الثمانية لقواعد الأسبقية البروتوكولية"
+        },
+        {
+          "topic_id": "P2C3-00",
+          "title": "تمهيد الفصل الثالث: البروتوكول الدبلوماسي والمناسبات السيادية والدولية"
+        },
+        {
+          "topic_id": "P1-X",
+          "title": "خاتمة الباب الأول"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-10",
+        "P2C3-00",
+        "P1-X"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "B15",
+      "category": "basic",
+      "lang": "en",
+      "text": "What is protocol in international relations, and what distinguishes it from ordinary social etiquette?",
+      "expected_topic_id": "P1C1-M2",
+      "expected_pages": [
+        7,
+        8
+      ],
+      "expected_answer_type": "definition",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M1",
+          "title": "تعريف المراسم"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "B16",
+      "category": "basic",
+      "lang": "en",
+      "text": "Explain the difference between protocol, ceremony, and honours (tashrifat) using one example.",
+      "expected_topic_id": "P1C1-M4",
+      "expected_pages": [
+        10,
+        11
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M1",
+          "title": "تعريف المراسم"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "B17",
+      "category": "basic",
+      "lang": "en",
+      "text": "What is diplomatic precedence, and is it a personal privilege or an organisational mechanism?",
+      "expected_topic_id": "P2C1-M2-00",
+      "expected_pages": [
+        54,
+        55
+      ],
+      "expected_answer_type": "definition",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        },
+        {
+          "topic_id": "P2C2-M2",
+          "title": "حفلات العشاء والمآدب الرسمية"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-00",
+        "P2C2-M2"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "B18",
+      "category": "basic",
+      "lang": "en",
+      "text": "What are the governing principles of international protocol, and why does sovereign equality matter?",
+      "expected_topic_id": "P2C3-M1",
+      "expected_pages": [
+        192,
+        198
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M1",
+          "title": "تعريف المراسم"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M1",
+        "P2C1-M3",
+        "P2C2-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "B19",
+      "category": "basic",
+      "lang": "en",
+      "text": "What ceremonies surround national flags, anthems and emblems?",
+      "expected_topic_id": "P2C2-M3",
+      "expected_pages": [
+        164,
+        176
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "none",
+      "top3": [],
+      "top3_ids": [],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "B20",
+      "category": "basic",
+      "lang": "en",
+      "text": "What is tashrifat, and what is its purpose when receiving official figures?",
+      "expected_topic_id": "P1C1-M3",
+      "expected_pages": [
+        9,
+        9
+      ],
+      "expected_answer_type": "definition",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "A01",
+      "category": "applied",
+      "lang": "ar",
+      "text": "وصل رئيس دولة في زيارة رسمية إلى المطار؛ ما خطوات استقباله منذ لحظة الوصول حتى مغادرة المطار؟",
+      "expected_topic_id": "P2C1-M4",
+      "expected_pages": [
+        99,
+        116
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C3-M2",
+          "title": "مراسم تقديم أوراق اعتماد السفراء"
+        },
+        {
+          "topic_id": "P2C1-M4V",
+          "title": "ملخص بصري لمراحل مراسم الاستقبال"
+        },
+        {
+          "topic_id": "P2C1-M4",
+          "title": "مراسم استقبال كبار الشخصيات"
+        }
+      ],
+      "top3_ids": [
+        "P2C3-M2",
+        "P2C1-M4V",
+        "P2C1-M4"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "A02",
+      "category": "applied",
+      "lang": "ar",
+      "text": "كيف تُنظم مراسم توديع ضيف رسمي كبير في نهاية زيارته؟",
+      "expected_topic_id": "P2C1-M5",
+      "expected_pages": [
+        126,
+        135
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M5",
+          "title": "مراسم توديع كبار الشخصيات"
+        },
+        {
+          "topic_id": "P2C2-M2",
+          "title": "حفلات العشاء والمآدب الرسمية"
+        },
+        {
+          "topic_id": "P2C1-M2-07",
+          "title": "الأسبقية في المناسبات الرسمية"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M5",
+        "P2C2-M2",
+        "P2C1-M2-07"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "A03",
+      "category": "applied",
+      "lang": "ar",
+      "text": "أعدّ مخططاً لبرنامج زيارة رسمية تستغرق ثلاثة أيام لوفد برئاسة رئيس حكومة.",
+      "expected_topic_id": "P2C1-M3",
+      "expected_pages": [
+        94,
+        98
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C1-M2-09",
+          "title": "تعارض معايير الأسبقية"
+        },
+        {
+          "topic_id": "P2C1-M4",
+          "title": "مراسم استقبال كبار الشخصيات"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3",
+        "P2C1-M2-09",
+        "P2C1-M4"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "A04",
+      "category": "applied",
+      "lang": "ar",
+      "text": "كيف يُرتب جلوس الضيوف في مأدبة عشاء رسمية يتصدرها رئيس الدولة؟",
+      "expected_topic_id": "P2C2-M2",
+      "expected_pages": [
+        158,
+        163
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C2-M2",
+          "title": "حفلات العشاء والمآدب الرسمية"
+        },
+        {
+          "topic_id": "P2C3-M4",
+          "title": "البروتوكول في الاحتفالات الوطنية والدينية"
+        },
+        {
+          "topic_id": "P2C1-M2-07",
+          "title": "الأسبقية في المناسبات الرسمية"
+        }
+      ],
+      "top3_ids": [
+        "P2C2-M2",
+        "P2C3-M4",
+        "P2C1-M2-07"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "A05",
+      "category": "applied",
+      "lang": "ar",
+      "text": "ما المراحل الأربع لتقديم سفير جديد أوراق اعتماده؟",
+      "expected_topic_id": "P2C3-M2",
+      "expected_pages": [
+        199,
+        204
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C3-M2",
+          "title": "مراسم تقديم أوراق اعتماد السفراء"
+        },
+        {
+          "topic_id": "P2C1-M2-04",
+          "title": "الأسبقية في مجال البعثات الدبلوماسية والقنصلية"
+        },
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        }
+      ],
+      "top3_ids": [
+        "P2C3-M2",
+        "P2C1-M2-04",
+        "APP1-B"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "A06",
+      "category": "applied",
+      "lang": "ar",
+      "text": "ما مراحل توقيع اتفاقية دولية، وكيف يُراعى مبدأ المساواة السيادية فيها؟",
+      "expected_topic_id": "P2C3-M3",
+      "expected_pages": [
+        205,
+        210
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C3-M3",
+          "title": "بروتوكول توقيع الاتفاقيات والمعاهدات"
+        },
+        {
+          "topic_id": "P2C3-00",
+          "title": "تمهيد الفصل الثالث: البروتوكول الدبلوماسي والمناسبات السيادية والدولية"
+        },
+        {
+          "topic_id": "P2C3-M1",
+          "title": "الدبلوماسية والمراسم والبروتوكولات الدولية"
+        }
+      ],
+      "top3_ids": [
+        "P2C3-M3",
+        "P2C3-00",
+        "P2C3-M1"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "A07",
+      "category": "applied",
+      "lang": "ar",
+      "text": "ما الذي يجب تجهيزه لتنظيم مؤتمر دولي يضم وفوداً من عشرين دولة؟",
+      "expected_topic_id": "P2C2-M1",
+      "expected_pages": [
+        144,
+        157
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        },
+        {
+          "topic_id": "P2C1-M2-02",
+          "title": "الأسبقية بين الدول"
+        },
+        {
+          "topic_id": "P1C1-M4",
+          "title": "الفروق بين المراسم والبروتوكولات والتشريفات"
+        }
+      ],
+      "top3_ids": [
+        "P2C2-M1",
+        "P2C1-M2-02",
+        "P1C1-M4"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "A08",
+      "category": "applied",
+      "lang": "ar",
+      "text": "ما قواعد تقديم الهدايا الرسمية، وكيف تُوثق؟",
+      "expected_topic_id": "P2C2-M4",
+      "expected_pages": [
+        177,
+        188
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C2-X",
+          "title": "خاتمة الفصل الثاني"
+        },
+        {
+          "topic_id": "P2C2-M4",
+          "title": "مراسم تقديم الهدايا والتوثيق الرسمي"
+        },
+        {
+          "topic_id": "P2-X",
+          "title": "خاتمة الباب الثاني"
+        }
+      ],
+      "top3_ids": [
+        "P2C2-X",
+        "P2C2-M4",
+        "P2-X"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "A09",
+      "category": "applied",
+      "lang": "ar",
+      "text": "توفي رئيس دولة؛ ما إجراءات تنكيس الأعلام والحداد الرسمي؟",
+      "expected_topic_id": "P2C2-M3",
+      "expected_pages": [
+        164,
+        176
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C2-M3",
+          "title": "مراسم الأعلام والنشيد والشعار الوطني"
+        },
+        {
+          "topic_id": "P2C1-M2-04",
+          "title": "الأسبقية في مجال البعثات الدبلوماسية والقنصلية"
+        },
+        {
+          "topic_id": "P2C1-M5",
+          "title": "مراسم توديع كبار الشخصيات"
+        }
+      ],
+      "top3_ids": [
+        "P2C2-M3",
+        "P2C1-M2-04",
+        "P2C1-M5"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "A10",
+      "category": "applied",
+      "lang": "ar",
+      "text": "قدّم سفيران أوراق اعتمادهما في تاريخين مختلفين؛ من يتقدم في الأسبقية ولماذا؟",
+      "expected_topic_id": "P2C1-M2-04",
+      "expected_pages": [
+        69,
+        71
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-04",
+          "title": "الأسبقية في مجال البعثات الدبلوماسية والقنصلية"
+        },
+        {
+          "topic_id": "P2C1-M2-03",
+          "title": "أسبقية الملوك ورؤساء الدول"
+        },
+        {
+          "topic_id": "P2C3-M2",
+          "title": "مراسم تقديم أوراق اعتماد السفراء"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-04",
+        "P2C1-M2-03",
+        "P2C3-M2"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "A11",
+      "category": "applied",
+      "lang": "ar",
+      "text": "كيف يُنظم البروتوكول في احتفال وطني كبير يحضره السلك الدبلوماسي؟",
+      "expected_topic_id": "P2C3-M4",
+      "expected_pages": [
+        211,
+        215
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C3-M4",
+          "title": "البروتوكول في الاحتفالات الوطنية والدينية"
+        },
+        {
+          "topic_id": "P2C2-M2",
+          "title": "حفلات العشاء والمآدب الرسمية"
+        },
+        {
+          "topic_id": "P1C1-M4",
+          "title": "الفروق بين المراسم والبروتوكولات والتشريفات"
+        }
+      ],
+      "top3_ids": [
+        "P2C3-M4",
+        "P2C2-M2",
+        "P1C1-M4"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "A12",
+      "category": "applied",
+      "lang": "ar",
+      "text": "كيف تُمارس المراسم والبروتوكول في الجمهورية اليمنية وفق الكتاب؟",
+      "expected_topic_id": "P2C1-M6",
+      "expected_pages": [
+        136,
+        139
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "APP2",
+          "title": "القرار الجمهوري بالقانون رقم (41) لسنة 1991م (بشأن المراسم — نص القانون اليمني)"
+        },
+        {
+          "topic_id": "P2C1-M6",
+          "title": "آلية ممارسة المراسم والبروتوكول في الجمهورية اليمنية"
+        },
+        {
+          "topic_id": "P2C1-X",
+          "title": "خاتمة الفصل الأول"
+        }
+      ],
+      "top3_ids": [
+        "APP2",
+        "P2C1-M6",
+        "P2C1-X"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "A13",
+      "category": "applied",
+      "lang": "en",
+      "text": "Plan a three-day official visit programme for a delegation led by a prime minister.",
+      "expected_topic_id": "P2C1-M3",
+      "expected_pages": [
+        94,
+        98
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "A14",
+      "category": "applied",
+      "lang": "en",
+      "text": "How is precedence arranged among guests at a formal state occasion?",
+      "expected_topic_id": "P2C1-M2-07",
+      "expected_pages": [
+        81,
+        85
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        },
+        {
+          "topic_id": "P2C2-M2",
+          "title": "حفلات العشاء والمآدب الرسمية"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-00",
+        "P2C2-M2",
+        "P2C1-M3"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "A15",
+      "category": "applied",
+      "lang": "en",
+      "text": "What are the stages of an ambassador presenting credentials to a head of state?",
+      "expected_topic_id": "P2C3-M2",
+      "expected_pages": [
+        199,
+        204
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        },
+        {
+          "topic_id": "P2C2-M2",
+          "title": "حفلات العشاء والمآدب الرسمية"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3",
+        "P2C2-M1",
+        "P2C2-M2"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "A16",
+      "category": "applied",
+      "lang": "en",
+      "text": "How should guests be seated at a formal state banquet?",
+      "expected_topic_id": "P2C2-M2",
+      "expected_pages": [
+        158,
+        163
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C2-M2",
+          "title": "حفلات العشاء والمآدب الرسمية"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C3-M4",
+          "title": "البروتوكول في الاحتفالات الوطنية والدينية"
+        }
+      ],
+      "top3_ids": [
+        "P2C2-M2",
+        "P2C1-M3",
+        "P2C3-M4"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "A17",
+      "category": "applied",
+      "lang": "en",
+      "text": "What is the procedure for flying flags at half-mast during official mourning?",
+      "expected_topic_id": "P2C2-M3",
+      "expected_pages": [
+        164,
+        176
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "A18",
+      "category": "applied",
+      "lang": "en",
+      "text": "What needs to be prepared to organise an international conference with twenty delegations?",
+      "expected_topic_id": "P2C2-M1",
+      "expected_pages": [
+        144,
+        157
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "none",
+      "top3": [],
+      "top3_ids": [],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "A19",
+      "category": "applied",
+      "lang": "ar",
+      "text": "ما إجراءات استقبال وفد رسمي في المطار؟",
+      "expected_topic_id": "P2C1-M4",
+      "expected_pages": [
+        99,
+        116
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "and",
+      "top3": [
+        {
+          "topic_id": "P2C1-M5",
+          "title": "مراسم توديع كبار الشخصيات"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M5"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "A20",
+      "category": "applied",
+      "lang": "ar",
+      "text": "ما الفرق العملي بين مراسم الاستقبال ومراسم التوديع عند مغادرة الضيف؟",
+      "expected_topic_id": "P2C1-M5",
+      "expected_pages": [
+        126,
+        135
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M5",
+          "title": "مراسم توديع كبار الشخصيات"
+        },
+        {
+          "topic_id": "P2C1-M4",
+          "title": "مراسم استقبال كبار الشخصيات"
+        },
+        {
+          "topic_id": "P2C1-00",
+          "title": "تمهيد الباب الثاني والفصل الأول: إدارة المراسم والبروتوكول الرسمي في الدولة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M5",
+        "P2C1-M4",
+        "P2C1-00"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "C01",
+      "category": "complex",
+      "lang": "ar",
+      "text": "قارن بين قواعد الأسبقية في الأمم المتحدة وقواعدها في جامعة الدول العربية من حيث الأساس الحاكم وآلية الترتيب.",
+      "expected_topic_id": "P2C1-M2-05",
+      "expected_pages": [
+        72,
+        74
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-06",
+          "title": "الأسبقية في جامعة الدول العربية"
+        },
+        {
+          "topic_id": "P2C3-M1",
+          "title": "الدبلوماسية والمراسم والبروتوكولات الدولية"
+        },
+        {
+          "topic_id": "P2C1-M2-05",
+          "title": "الأسبقية في الأمم المتحدة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-06",
+        "P2C3-M1",
+        "P2C1-M2-05"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "C02",
+      "category": "complex",
+      "lang": "ar",
+      "text": "قارن بين الأسبقية داخل الدولة والأسبقية بين الدول: ما معيار كل منهما؟",
+      "expected_topic_id": "P2C1-M2-01",
+      "expected_pages": [
+        56,
+        60
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-09",
+          "title": "تعارض معايير الأسبقية"
+        },
+        {
+          "topic_id": "P2C1-M2-04",
+          "title": "الأسبقية في مجال البعثات الدبلوماسية والقنصلية"
+        },
+        {
+          "topic_id": "P1C2-M4",
+          "title": "نشأة البروتوكولات الدبلوماسية الحديثة ومأسستها الدولية"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-09",
+        "P2C1-M2-04",
+        "P1C2-M4"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C03",
+      "category": "complex",
+      "lang": "ar",
+      "text": "قارن بين أسبقية الملوك ورؤساء الدول وأسبقية رؤساء البعثات الدبلوماسية.",
+      "expected_topic_id": "P2C1-M2-03",
+      "expected_pages": [
+        65,
+        68
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-03",
+          "title": "أسبقية الملوك ورؤساء الدول"
+        },
+        {
+          "topic_id": "P2C1-M2-04",
+          "title": "الأسبقية في مجال البعثات الدبلوماسية والقنصلية"
+        },
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-03",
+        "P2C1-M2-04",
+        "APP1-B"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "C04",
+      "category": "complex",
+      "lang": "ar",
+      "text": "تعارض معيارا الأسبقية في مناسبة واحدة: الأقدمية في المنصب من جهة، وطبيعة المناسبة من جهة أخرى؛ كيف يُرجَّح بينهما وفق الكتاب؟",
+      "expected_topic_id": "P2C1-M2-09",
+      "expected_pages": [
+        89,
+        91
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-09",
+          "title": "تعارض معايير الأسبقية"
+        },
+        {
+          "topic_id": "P2C1-M2-03",
+          "title": "أسبقية الملوك ورؤساء الدول"
+        },
+        {
+          "topic_id": "P2C1-M2-01",
+          "title": "الأسبقية داخل الدولة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-09",
+        "P2C1-M2-03",
+        "P2C1-M2-01"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "C05",
+      "category": "complex",
+      "lang": "ar",
+      "text": "متى تتقدم أسبقية المجاملة على القواعد الرسمية للأسبقية، وما حدود ذلك؟",
+      "expected_topic_id": "P2C1-M2-08",
+      "expected_pages": [
+        86,
+        88
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M2",
+          "title": "تعريف البروتوكولات"
+        },
+        {
+          "topic_id": "P2C1-M2-10",
+          "title": "خلاصة الجوانب الثمانية لقواعد الأسبقية البروتوكولية"
+        },
+        {
+          "topic_id": "P2C1-M2-09",
+          "title": "تعارض معايير الأسبقية"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M2",
+        "P2C1-M2-10",
+        "P2C1-M2-09"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C06",
+      "category": "complex",
+      "lang": "ar",
+      "text": "قارن بين مراسم استقبال كبار الشخصيات ومراسم توديعهم من حيث المراحل والهدف.",
+      "expected_topic_id": "P2C1-M4",
+      "expected_pages": [
+        99,
+        116
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M4V",
+          "title": "ملخص بصري لمراحل مراسم الاستقبال"
+        },
+        {
+          "topic_id": "P2-X",
+          "title": "خاتمة الباب الثاني"
+        },
+        {
+          "topic_id": "P2C1-M4",
+          "title": "مراسم استقبال كبار الشخصيات"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M4V",
+        "P2-X",
+        "P2C1-M4"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "C07",
+      "category": "complex",
+      "lang": "ar",
+      "text": "قارن بين جذور المراسم في الحضارات القديمة وبين المراسم في العصر الإسلامي.",
+      "expected_topic_id": "P1C2-M1",
+      "expected_pages": [
+        16,
+        21
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C2-X",
+          "title": "خاتمة الفصل الثاني"
+        },
+        {
+          "topic_id": "P1C2-M2",
+          "title": "المراسم والبروتوكولات في العصر الإسلامي"
+        },
+        {
+          "topic_id": "P1C2-M1",
+          "title": "الجذور الأولى للمراسم والبروتوكول في الحضارات القديمة"
+        }
+      ],
+      "top3_ids": [
+        "P1C2-X",
+        "P1C2-M2",
+        "P1C2-M1"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "C08",
+      "category": "complex",
+      "lang": "ar",
+      "text": "كيف انتقل البروتوكول من طقوس البلاطات الملكية في العصور الوسطى إلى نظام دبلوماسي حديث مأسس دولياً؟",
+      "expected_topic_id": "P1C2-M3",
+      "expected_pages": [
+        30,
+        32
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C2-M3",
+          "title": "المراسم والبروتوكول في العصور الوسطى وأوروبا الملكية"
+        },
+        {
+          "topic_id": "IDX",
+          "title": "فهرس الكتاب والهوامش الختامية (34 هامشاً مرقماً)"
+        },
+        {
+          "topic_id": "P1C2-X",
+          "title": "خاتمة الفصل الثاني"
+        }
+      ],
+      "top3_ids": [
+        "P1C2-M3",
+        "IDX",
+        "P1C2-X"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "C09",
+      "category": "complex",
+      "lang": "ar",
+      "text": "ما العلاقة بين مؤتمر فيينا 1815 واتفاقية فيينا 1961 في تطور البروتوكول الدبلوماسي؟",
+      "expected_topic_id": "P1C2-M4",
+      "expected_pages": [
+        33,
+        36
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C2-00",
+          "title": "تمهيد الفصل الثاني: التطور التاريخي للمراسم والبروتوكولات"
+        },
+        {
+          "topic_id": "P1C2-M4",
+          "title": "نشأة البروتوكولات الدبلوماسية الحديثة ومأسستها الدولية"
+        },
+        {
+          "topic_id": "P1C1-M2",
+          "title": "تعريف البروتوكولات"
+        }
+      ],
+      "top3_ids": [
+        "P1C2-00",
+        "P1C2-M4",
+        "P1C1-M2"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "C10",
+      "category": "complex",
+      "lang": "ar",
+      "text": "حلل موقفاً يجمع مؤتمراً دولياً يعقبه عشاء رسمي: ما الذي يتغير في الترتيبات البروتوكولية بين الحدثين؟",
+      "expected_topic_id": "P2C2-M1",
+      "expected_pages": [
+        144,
+        157
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-02",
+          "title": "الأسبقية بين الدول"
+        },
+        {
+          "topic_id": "P2C2-00",
+          "title": "تمهيد الفصل الثاني: المراسم العملية وإدارة الأحداث الكبرى"
+        },
+        {
+          "topic_id": "P2C2-X",
+          "title": "خاتمة الفصل الثاني"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-02",
+        "P2C2-00",
+        "P2C2-X"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C11",
+      "category": "complex",
+      "lang": "ar",
+      "text": "حلل العلاقة بين مراسم الأعلام والنشيد ومراسم الهدايا والتوثيق بوصفها رموزاً سيادية.",
+      "expected_topic_id": "P2C2-M3",
+      "expected_pages": [
+        164,
+        176
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C2-X",
+          "title": "خاتمة الفصل الثاني"
+        },
+        {
+          "topic_id": "P2C2-00",
+          "title": "تمهيد الفصل الثاني: المراسم العملية وإدارة الأحداث الكبرى"
+        },
+        {
+          "topic_id": "P2C2-M4",
+          "title": "مراسم تقديم الهدايا والتوثيق الرسمي"
+        }
+      ],
+      "top3_ids": [
+        "P2C2-X",
+        "P2C2-00",
+        "P2C2-M4"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C12",
+      "category": "complex",
+      "lang": "ar",
+      "text": "قارن بين مراسم تقديم أوراق الاعتماد ومراسم توقيع الاتفاقيات من حيث الحساسية الدبلوماسية والإجراءات.",
+      "expected_topic_id": "P2C3-M2",
+      "expected_pages": [
+        199,
+        204
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C3-M3",
+          "title": "بروتوكول توقيع الاتفاقيات والمعاهدات"
+        },
+        {
+          "topic_id": "P2C3-00",
+          "title": "تمهيد الفصل الثالث: البروتوكول الدبلوماسي والمناسبات السيادية والدولية"
+        },
+        {
+          "topic_id": "P2C3-X",
+          "title": "خاتمة الفصل الثالث"
+        }
+      ],
+      "top3_ids": [
+        "P2C3-M3",
+        "P2C3-00",
+        "P2C3-X"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C13",
+      "category": "complex",
+      "lang": "en",
+      "text": "Compare the institutional structure for managing state protocol in general with how protocol is practised in the Republic of Yemen.",
+      "expected_topic_id": "P2C1-M1",
+      "expected_pages": [
+        48,
+        53
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M1",
+          "title": "تعريف المراسم"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M1",
+        "P2C1-M3",
+        "P2C2-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C14",
+      "category": "complex",
+      "lang": "en",
+      "text": "How do contemporary ceremonies and image management differ from traditional court protocol, including in the digital environment?",
+      "expected_topic_id": "P1C2-M5",
+      "expected_pages": [
+        37,
+        39
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M1",
+          "title": "تعريف المراسم"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C15",
+      "category": "complex",
+      "lang": "en",
+      "text": "Compare precedence rules in the United Nations with those in the League of Arab States.",
+      "expected_topic_id": "P2C1-M2-05",
+      "expected_pages": [
+        72,
+        74
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-00",
+        "P2C1-M3",
+        "P2C2-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C16",
+      "category": "complex",
+      "lang": "en",
+      "text": "Two precedence criteria conflict at the same event — seniority in office versus the nature of the occasion. How should the conflict be resolved according to the book?",
+      "expected_topic_id": "P2C1-M2-09",
+      "expected_pages": [
+        89,
+        91
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        },
+        {
+          "topic_id": "P2C3-M4",
+          "title": "البروتوكول في الاحتفالات الوطنية والدينية"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-00",
+        "P2C3-M4",
+        "P2C1-M3"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C17",
+      "category": "complex",
+      "lang": "en",
+      "text": "Compare the ceremonies for receiving and farewelling a visiting head of state.",
+      "expected_topic_id": "P2C1-M4",
+      "expected_pages": [
+        99,
+        116
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        },
+        {
+          "topic_id": "P2C2-M2",
+          "title": "حفلات العشاء والمآدب الرسمية"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3",
+        "P2C2-M1",
+        "P2C2-M2"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C18",
+      "category": "complex",
+      "lang": "en",
+      "text": "Compare the roots of protocol in ancient civilisations with protocol in the Islamic era.",
+      "expected_topic_id": "P1C2-M1",
+      "expected_pages": [
+        16,
+        21
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M1",
+          "title": "تعريف المراسم"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M1",
+        "P2C1-M3",
+        "P2C2-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C19",
+      "category": "complex",
+      "lang": "ar",
+      "text": "حلل زيارة دولة كاملة: من الاستقبال في المطار إلى ترتيب الأسبقية في الاجتماعات إلى التوديع؛ ما العناصر التي يجب تنسيقها معاً؟",
+      "expected_topic_id": "P2C1-M3",
+      "expected_pages": [
+        94,
+        98
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M5",
+          "title": "مراسم توديع كبار الشخصيات"
+        },
+        {
+          "topic_id": "P2C2-M2",
+          "title": "حفلات العشاء والمآدب الرسمية"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M5",
+        "P2C2-M2",
+        "P2C1-M3"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "C20",
+      "category": "complex",
+      "lang": "ar",
+      "text": "سفيران من الطبقة نفسها قدما أوراقهما في يومين مختلفين، وضيف مجاملة رفيع يحضر المناسبة نفسها؛ رتّبهم وعلل ترتيبك.",
+      "expected_topic_id": "P2C1-M2-04",
+      "expected_pages": [
+        69,
+        71
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-08",
+          "title": "أسبقية المجاملة"
+        },
+        {
+          "topic_id": "P2C2-M4",
+          "title": "مراسم تقديم الهدايا والتوثيق الرسمي"
+        },
+        {
+          "topic_id": "P2C1-M2-05",
+          "title": "الأسبقية في الأمم المتحدة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-08",
+        "P2C2-M4",
+        "P2C1-M2-05"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "S01",
+      "category": "sources",
+      "lang": "ar",
+      "text": "متى وُقعت اتفاقية فيينا للعلاقات الدبلوماسية، وأين يرد نصها في الكتاب؟",
+      "expected_topic_id": "APP1-A",
+      "expected_pages": [
+        221,
+        224
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C3-M3",
+          "title": "بروتوكول توقيع الاتفاقيات والمعاهدات"
+        },
+        {
+          "topic_id": "P1C1-M2",
+          "title": "تعريف البروتوكولات"
+        },
+        {
+          "topic_id": "APP1-A",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — الديباجة والمواد 1–12 (التعريفات، إقامة العلاقات، مهام البعثة، الاعتماد)"
+        }
+      ],
+      "top3_ids": [
+        "P2C3-M3",
+        "P1C1-M2",
+        "APP1-A"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "S02",
+      "category": "sources",
+      "lang": "ar",
+      "text": "ما الذي تنص عليه المادة 14 من اتفاقية فيينا للعلاقات الدبلوماسية؟",
+      "expected_topic_id": "APP1-B",
+      "expected_pages": [
+        225,
+        229
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        },
+        {
+          "topic_id": "APP1-C",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 34–53 والأحكام الختامية (الامتيازات، الواجبات، إنهاء المهام، التصديق والانضمام)"
+        },
+        {
+          "topic_id": "P2C3-M3",
+          "title": "بروتوكول توقيع الاتفاقيات والمعاهدات"
+        }
+      ],
+      "top3_ids": [
+        "APP1-B",
+        "APP1-C",
+        "P2C3-M3"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "S03",
+      "category": "sources",
+      "lang": "ar",
+      "text": "كيف تحدد المادة 16 من اتفاقية فيينا أسبقية رؤساء البعثات؟",
+      "expected_topic_id": "APP1-B",
+      "expected_pages": [
+        225,
+        229
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        },
+        {
+          "topic_id": "APP1-C",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 34–53 والأحكام الختامية (الامتيازات، الواجبات، إنهاء المهام، التصديق والانضمام)"
+        },
+        {
+          "topic_id": "REF",
+          "title": "مراجع الكتاب (القرآن الكريم، كتب عربية، وثائق وأنظمة رسمية، مراجع أجنبية)"
+        }
+      ],
+      "top3_ids": [
+        "APP1-B",
+        "APP1-C",
+        "REF"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "S04",
+      "category": "sources",
+      "lang": "ar",
+      "text": "ما الذي تقرره المادة 22 من اتفاقية فيينا بشأن حرمة مباني البعثة؟",
+      "expected_topic_id": "APP1-B",
+      "expected_pages": [
+        225,
+        229
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "APP1-A",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — الديباجة والمواد 1–12 (التعريفات، إقامة العلاقات، مهام البعثة، الاعتماد)"
+        },
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        },
+        {
+          "topic_id": "APP1-C",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 34–53 والأحكام الختامية (الامتيازات، الواجبات، إنهاء المهام، التصديق والانضمام)"
+        }
+      ],
+      "top3_ids": [
+        "APP1-A",
+        "APP1-B",
+        "APP1-C"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "S05",
+      "category": "sources",
+      "lang": "ar",
+      "text": "ما الذي تنص عليه المادة 29 من اتفاقية فيينا بشأن شخص الممثل الدبلوماسي؟",
+      "expected_topic_id": "APP1-B",
+      "expected_pages": [
+        225,
+        229
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "APP1-C",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 34–53 والأحكام الختامية (الامتيازات، الواجبات، إنهاء المهام، التصديق والانضمام)"
+        },
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        },
+        {
+          "topic_id": "P1C2-M4",
+          "title": "نشأة البروتوكولات الدبلوماسية الحديثة ومأسستها الدولية"
+        }
+      ],
+      "top3_ids": [
+        "APP1-C",
+        "APP1-B",
+        "P1C2-M4"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "S06",
+      "category": "sources",
+      "lang": "ar",
+      "text": "ما واجبات الممثل الدبلوماسي وفق المادة 41 من اتفاقية فيينا؟",
+      "expected_topic_id": "APP1-C",
+      "expected_pages": [
+        230,
+        236
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "APP1-C",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 34–53 والأحكام الختامية (الامتيازات، الواجبات، إنهاء المهام، التصديق والانضمام)"
+        },
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        },
+        {
+          "topic_id": "APP1-A",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — الديباجة والمواد 1–12 (التعريفات، إقامة العلاقات، مهام البعثة، الاعتماد)"
+        }
+      ],
+      "top3_ids": [
+        "APP1-C",
+        "APP1-B",
+        "APP1-A"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "S07",
+      "category": "sources",
+      "lang": "ar",
+      "text": "ماذا تقول المادة 38 من اتفاقية فيينا عن الممثل الدبلوماسي الذي يحمل جنسية الدولة المضيفة؟",
+      "expected_topic_id": "APP1-C",
+      "expected_pages": [
+        230,
+        236
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "APP1-C",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 34–53 والأحكام الختامية (الامتيازات، الواجبات، إنهاء المهام، التصديق والانضمام)"
+        },
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        },
+        {
+          "topic_id": "APP1-A",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — الديباجة والمواد 1–12 (التعريفات، إقامة العلاقات، مهام البعثة، الاعتماد)"
+        }
+      ],
+      "top3_ids": [
+        "APP1-C",
+        "APP1-B",
+        "APP1-A"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "S08",
+      "category": "sources",
+      "lang": "ar",
+      "text": "متى يعتبر رئيس البعثة قد تسلّم مهام منصبه وفق المادة 13 من اتفاقية فيينا؟",
+      "expected_topic_id": "APP1-B",
+      "expected_pages": [
+        225,
+        229
+      ],
+      "expected_answer_type": "citation",
+      "stage": "and",
+      "top3": [
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        }
+      ],
+      "top3_ids": [
+        "APP1-B"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "S09",
+      "category": "sources",
+      "lang": "ar",
+      "text": "في أي صفحات من الكتاب يرد نص الديباجة والمواد 1–12 من اتفاقية فيينا 1961؟",
+      "expected_topic_id": "APP1-A",
+      "expected_pages": [
+        221,
+        224
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "APP1-A",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — الديباجة والمواد 1–12 (التعريفات، إقامة العلاقات، مهام البعثة، الاعتماد)"
+        },
+        {
+          "topic_id": "P2C3-M3",
+          "title": "بروتوكول توقيع الاتفاقيات والمعاهدات"
+        },
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        }
+      ],
+      "top3_ids": [
+        "APP1-A",
+        "P2C3-M3",
+        "APP1-B"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "S10",
+      "category": "sources",
+      "lang": "ar",
+      "text": "أين يرد نص القرار الجمهوري بالقانون رقم 41 لسنة 1991م بشأن المراسم في الكتاب؟",
+      "expected_topic_id": "APP2",
+      "expected_pages": [
+        237,
+        240
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "APP2",
+          "title": "القرار الجمهوري بالقانون رقم (41) لسنة 1991م (بشأن المراسم — نص القانون اليمني)"
+        },
+        {
+          "topic_id": "P2C1-M6",
+          "title": "آلية ممارسة المراسم والبروتوكول في الجمهورية اليمنية"
+        },
+        {
+          "topic_id": "P1C2-M5",
+          "title": "المراسم المعاصرة وإدارة الصورة الذهنية"
+        }
+      ],
+      "top3_ids": [
+        "APP2",
+        "P2C1-M6",
+        "P1C2-M5"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "S11",
+      "category": "sources",
+      "lang": "ar",
+      "text": "أين تُدرج مراجع الكتاب، وما أقسامها؟",
+      "expected_topic_id": "REF",
+      "expected_pages": [
+        241,
+        245
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "REF",
+          "title": "مراجع الكتاب (القرآن الكريم، كتب عربية، وثائق وأنظمة رسمية، مراجع أجنبية)"
+        },
+        {
+          "topic_id": "IDX",
+          "title": "فهرس الكتاب والهوامش الختامية (34 هامشاً مرقماً)"
+        },
+        {
+          "topic_id": "CONC",
+          "title": "خاتمة الكتاب"
+        }
+      ],
+      "top3_ids": [
+        "REF",
+        "IDX",
+        "CONC"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "S12",
+      "category": "sources",
+      "lang": "en",
+      "text": "Which article of the Vienna Convention on Diplomatic Relations governs the inviolability of mission premises?",
+      "expected_topic_id": "APP1-B",
+      "expected_pages": [
+        225,
+        229
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3",
+        "P2C2-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "S13",
+      "category": "sources",
+      "lang": "en",
+      "text": "What does Article 14 of the Vienna Convention say about the classes of heads of mission?",
+      "expected_topic_id": "APP1-B",
+      "expected_pages": [
+        225,
+        229
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        },
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3",
+        "P2C2-M1",
+        "APP1-B"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "S14",
+      "category": "sources",
+      "lang": "en",
+      "text": "What duties does Article 41 of the Vienna Convention impose on diplomatic agents?",
+      "expected_topic_id": "APP1-C",
+      "expected_pages": [
+        230,
+        236
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "APP2",
+          "title": "القرار الجمهوري بالقانون رقم (41) لسنة 1991م (بشأن المراسم — نص القانون اليمني)"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        }
+      ],
+      "top3_ids": [
+        "APP2",
+        "P2C1-M3",
+        "P2C2-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "S15",
+      "category": "sources",
+      "lang": "ar",
+      "text": "في أي صفحات من الكتاب يبحث مبحث الأسبقية في الأمم المتحدة؟",
+      "expected_topic_id": "P2C1-M2-05",
+      "expected_pages": [
+        72,
+        74
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-05",
+          "title": "الأسبقية في الأمم المتحدة"
+        },
+        {
+          "topic_id": "IDX",
+          "title": "فهرس الكتاب والهوامش الختامية (34 هامشاً مرقماً)"
+        },
+        {
+          "topic_id": "P2C3-M1",
+          "title": "الدبلوماسية والمراسم والبروتوكولات الدولية"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-05",
+        "IDX",
+        "P2C3-M1"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "S16",
+      "category": "sources",
+      "lang": "ar",
+      "text": "ما نطاق المواد التي يغطيها الجزء الأول من نص اتفاقية فيينا في ملحق الكتاب؟",
+      "expected_topic_id": "APP1-A",
+      "expected_pages": [
+        221,
+        224
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C3-M3",
+          "title": "بروتوكول توقيع الاتفاقيات والمعاهدات"
+        },
+        {
+          "topic_id": "APP1-A",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — الديباجة والمواد 1–12 (التعريفات، إقامة العلاقات، مهام البعثة، الاعتماد)"
+        },
+        {
+          "topic_id": "APP1-C",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 34–53 والأحكام الختامية (الامتيازات، الواجبات، إنهاء المهام، التصديق والانضمام)"
+        }
+      ],
+      "top3_ids": [
+        "P2C3-M3",
+        "APP1-A",
+        "APP1-C"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "S17",
+      "category": "sources",
+      "lang": "ar",
+      "text": "ما القانون اليمني الذي ينظم المراسم، ومتى صدر؟",
+      "expected_topic_id": "APP2",
+      "expected_pages": [
+        237,
+        240
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "APP2",
+          "title": "القرار الجمهوري بالقانون رقم (41) لسنة 1991م (بشأن المراسم — نص القانون اليمني)"
+        },
+        {
+          "topic_id": "P2C1-M6",
+          "title": "آلية ممارسة المراسم والبروتوكول في الجمهورية اليمنية"
+        },
+        {
+          "topic_id": "P2C1-X",
+          "title": "خاتمة الفصل الأول"
+        }
+      ],
+      "top3_ids": [
+        "APP2",
+        "P2C1-M6",
+        "P2C1-X"
+      ],
+      "hit_at_3": true,
+      "refusal_correct": null,
+      "failed": false
+    },
+    {
+      "id": "S18",
+      "category": "sources",
+      "lang": "en",
+      "text": "On which pages does the book discuss precedence in the League of Arab States?",
+      "expected_topic_id": "P2C1-M2-06",
+      "expected_pages": [
+        75,
+        80
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-00",
+        "P2C1-M3",
+        "P2C2-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "S19",
+      "category": "sources",
+      "lang": "en",
+      "text": "Which Vienna Convention article sets out how the precedence of heads of mission is determined, and what is its rule?",
+      "expected_topic_id": "APP1-B",
+      "expected_pages": [
+        225,
+        229
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        },
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3",
+        "P2C2-M1",
+        "P2C1-M2-00"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "S20",
+      "category": "sources",
+      "lang": "en",
+      "text": "What is the book's own source for its account of precedence in the League of Arab States — is there a verified external source?",
+      "expected_topic_id": "P2C1-M2-06",
+      "expected_pages": [
+        75,
+        80
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        },
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3",
+        "P2C2-M1",
+        "P2C1-M2-00"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "H01",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "ما نص المادة 77 من اتفاقية فيينا للعلاقات الدبلوماسية 1961؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C3-M3",
+          "title": "بروتوكول توقيع الاتفاقيات والمعاهدات"
+        },
+        {
+          "topic_id": "APP1-C",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 34–53 والأحكام الختامية (الامتيازات، الواجبات، إنهاء المهام، التصديق والانضمام)"
+        },
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        }
+      ],
+      "top3_ids": [
+        "P2C3-M3",
+        "APP1-C",
+        "APP1-B"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H02",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "ما الذي تنص عليه المادة 5 من اتفاقية جنيف للمراسم الدبلوماسية 1985؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "APP1-C",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 34–53 والأحكام الختامية (الامتيازات، الواجبات، إنهاء المهام، التصديق والانضمام)"
+        },
+        {
+          "topic_id": "P2C3-M3",
+          "title": "بروتوكول توقيع الاتفاقيات والمعاهدات"
+        },
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        }
+      ],
+      "top3_ids": [
+        "APP1-C",
+        "P2C3-M3",
+        "APP1-B"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H03",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "ما مرتبة لقب «سفير النوايا الحسنة الكونية» في جدول الأسبقية؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-04",
+          "title": "الأسبقية في مجال البعثات الدبلوماسية والقنصلية"
+        },
+        {
+          "topic_id": "P2C3-M2",
+          "title": "مراسم تقديم أوراق اعتماد السفراء"
+        },
+        {
+          "topic_id": "FM-01",
+          "title": "المادة الافتتاحية: الغلاف، الإهداء، التقديم، فكرة الكتاب، المقدمة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-04",
+        "P2C3-M2",
+        "FM-01"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H04",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "كيف تُرتب أسبقية سفير جمهورية زامبستان لدى الدولة المضيفة؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-04",
+          "title": "الأسبقية في مجال البعثات الدبلوماسية والقنصلية"
+        },
+        {
+          "topic_id": "P2C3-M2",
+          "title": "مراسم تقديم أوراق اعتماد السفراء"
+        },
+        {
+          "topic_id": "P2C1-M2-03",
+          "title": "أسبقية الملوك ورؤساء الدول"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-04",
+        "P2C3-M2",
+        "P2C1-M2-03"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H05",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "ما قواعد الأسبقية المعتمدة في «منظمة التعاون البروتوكولي العالمي»؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-03",
+          "title": "أسبقية الملوك ورؤساء الدول"
+        },
+        {
+          "topic_id": "P2C3-M1",
+          "title": "الدبلوماسية والمراسم والبروتوكولات الدولية"
+        },
+        {
+          "topic_id": "P1-X",
+          "title": "خاتمة الباب الأول"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-03",
+        "P2C3-M1",
+        "P1-X"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H06",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "كم طلقة مدفعية يحددها الكتاب عند استقبال رئيس دولة؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "CONC",
+          "title": "خاتمة الكتاب"
+        },
+        {
+          "topic_id": "P1C1-M4",
+          "title": "الفروق بين المراسم والبروتوكولات والتشريفات"
+        },
+        {
+          "topic_id": "P2C1-M2-04",
+          "title": "الأسبقية في مجال البعثات الدبلوماسية والقنصلية"
+        }
+      ],
+      "top3_ids": [
+        "CONC",
+        "P1C1-M4",
+        "P2C1-M2-04"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H07",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "صحيح أم خطأ: يقرر الكتاب أن الأسبقية بين الدول تحدد بحجم الدولة وثروتها لا بالمساواة السيادية؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "REF",
+          "title": "مراجع الكتاب (القرآن الكريم، كتب عربية، وثائق وأنظمة رسمية، مراجع أجنبية)"
+        },
+        {
+          "topic_id": "P1C1-M2",
+          "title": "تعريف البروتوكولات"
+        },
+        {
+          "topic_id": "FM-01",
+          "title": "المادة الافتتاحية: الغلاف، الإهداء، التقديم، فكرة الكتاب، المقدمة"
+        }
+      ],
+      "top3_ids": [
+        "REF",
+        "P1C1-M2",
+        "FM-01"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H08",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "ما بروتوكول إطلاق الأقمار الصناعية واستقبال رواد الفضاء حسب الكتاب؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "FM-01",
+          "title": "المادة الافتتاحية: الغلاف، الإهداء، التقديم، فكرة الكتاب، المقدمة"
+        },
+        {
+          "topic_id": "CONC",
+          "title": "خاتمة الكتاب"
+        },
+        {
+          "topic_id": "IDX",
+          "title": "فهرس الكتاب والهوامش الختامية (34 هامشاً مرقماً)"
+        }
+      ],
+      "top3_ids": [
+        "FM-01",
+        "CONC",
+        "IDX"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H09",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "اشرح المادة 54 من اتفاقية فيينا للعلاقات الدبلوماسية.",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "APP1-C",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 34–53 والأحكام الختامية (الامتيازات، الواجبات، إنهاء المهام، التصديق والانضمام)"
+        },
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        },
+        {
+          "topic_id": "P2C3-M3",
+          "title": "بروتوكول توقيع الاتفاقيات والمعاهدات"
+        }
+      ],
+      "top3_ids": [
+        "APP1-C",
+        "APP1-B",
+        "P2C3-M3"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H10",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "من أول سفير لليمن لدى الأمم المتحدة حسب ما يذكره الكتاب؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-05",
+          "title": "الأسبقية في الأمم المتحدة"
+        },
+        {
+          "topic_id": "P2C3-M1",
+          "title": "الدبلوماسية والمراسم والبروتوكولات الدولية"
+        },
+        {
+          "topic_id": "P2C3-M2",
+          "title": "مراسم تقديم أوراق اعتماد السفراء"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-05",
+        "P2C3-M1",
+        "P2C3-M2"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H11",
+      "category": "hallucination",
+      "lang": "en",
+      "text": "Quote Article 60 of the Vienna Convention on Diplomatic Relations.",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3",
+        "P2C2-M1"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H12",
+      "category": "hallucination",
+      "lang": "en",
+      "text": "How is the ambassador of the Republic of Zambrania ranked in precedence?",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        },
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3",
+        "P2C2-M1",
+        "P2C1-M2-00"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H13",
+      "category": "hallucination",
+      "lang": "en",
+      "text": "What is the precedence rank of the title 'Grand Ambassador Plenipotentiary of the Universe'?",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        },
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3",
+        "P2C2-M1",
+        "P2C1-M2-00"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H14",
+      "category": "hallucination",
+      "lang": "en",
+      "text": "What does the book say about protocol for a diplomatic mission to Mars?",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M1",
+          "title": "تعريف المراسم"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M1"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H15",
+      "category": "hallucination",
+      "lang": "en",
+      "text": "True or false: the book says precedence between states is decided by the wealth of the state, not sovereign equality?",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C2-M2",
+          "title": "حفلات العشاء والمآدب الرسمية"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        }
+      ],
+      "top3_ids": [
+        "P2C2-M2",
+        "P2C1-M3",
+        "P2C1-M2-00"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H16",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "ما نص المادة 100 من اتفاقية فيينا 1961؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C3-M3",
+          "title": "بروتوكول توقيع الاتفاقيات والمعاهدات"
+        },
+        {
+          "topic_id": "APP1-C",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 34–53 والأحكام الختامية (الامتيازات، الواجبات، إنهاء المهام، التصديق والانضمام)"
+        },
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        }
+      ],
+      "top3_ids": [
+        "P2C3-M3",
+        "APP1-C",
+        "APP1-B"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H17",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "ما بروتوكول استقبال وفد رسمي من كوكب المريخ؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C2-M2",
+          "title": "حفلات العشاء والمآدب الرسمية"
+        },
+        {
+          "topic_id": "P2C1-M4V",
+          "title": "ملخص بصري لمراحل مراسم الاستقبال"
+        },
+        {
+          "topic_id": "P2C1-M5",
+          "title": "مراسم توديع كبار الشخصيات"
+        }
+      ],
+      "top3_ids": [
+        "P2C2-M2",
+        "P2C1-M4V",
+        "P2C1-M5"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H18",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "هل يقدم السفير أوراق اعتماده إلى رئيس الوزراء بدلاً من رئيس الدولة حسب الكتاب؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-04",
+          "title": "الأسبقية في مجال البعثات الدبلوماسية والقنصلية"
+        },
+        {
+          "topic_id": "P2C3-M2",
+          "title": "مراسم تقديم أوراق اعتماد السفراء"
+        },
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-04",
+        "P2C3-M2",
+        "APP1-B"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H19",
+      "category": "hallucination",
+      "lang": "en",
+      "text": "According to the book, exactly how many gun salutes are fired when a king is received — 21 or 101?",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C2-M2",
+          "title": "حفلات العشاء والمآدب الرسمية"
+        }
+      ],
+      "top3_ids": [
+        "P2C2-M2"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H20",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "ما قواعد الأسبقية في «منظمة الدول البروتوكولية»؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "and",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-03",
+          "title": "أسبقية الملوك ورؤساء الدول"
+        },
+        {
+          "topic_id": "P2C1-M2-02",
+          "title": "الأسبقية بين الدول"
+        },
+        {
+          "topic_id": "P2C1-M2-05",
+          "title": "الأسبقية في الأمم المتحدة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-03",
+        "P2C1-M2-02",
+        "P2C1-M2-05"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    }
+  ],
+  "failed": [
+    {
+      "id": "B03",
+      "category": "basic",
+      "lang": "ar",
+      "text": "ما التشريفات؟ وما هدفها الأساسي عند استقبال الشخصيات الرسمية؟",
+      "expected_topic_id": "P1C1-M3",
+      "expected_pages": [
+        9,
+        9
+      ],
+      "expected_answer_type": "definition",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M4",
+          "title": "مراسم استقبال كبار الشخصيات"
+        },
+        {
+          "topic_id": "P2C1-M4V",
+          "title": "ملخص بصري لمراحل مراسم الاستقبال"
+        },
+        {
+          "topic_id": "P2C1-M1",
+          "title": "الهيكل المؤسسي لإدارة المراسم والبروتوكول في الدولة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M4",
+        "P2C1-M4V",
+        "P2C1-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "B10",
+      "category": "basic",
+      "lang": "ar",
+      "text": "ما الهيكل المؤسسي الذي يدير المراسم والبروتوكول داخل الدولة؟",
+      "expected_topic_id": "P2C1-M1",
+      "expected_pages": [
+        48,
+        53
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-X",
+          "title": "خاتمة الفصل الأول"
+        },
+        {
+          "topic_id": "P1C1-X",
+          "title": "خاتمة الفصل الأول"
+        },
+        {
+          "topic_id": "P2C1-M4",
+          "title": "مراسم استقبال كبار الشخصيات"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-X",
+        "P1C1-X",
+        "P2C1-M4"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "B15",
+      "category": "basic",
+      "lang": "en",
+      "text": "What is protocol in international relations, and what distinguishes it from ordinary social etiquette?",
+      "expected_topic_id": "P1C1-M2",
+      "expected_pages": [
+        7,
+        8
+      ],
+      "expected_answer_type": "definition",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M1",
+          "title": "تعريف المراسم"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "B16",
+      "category": "basic",
+      "lang": "en",
+      "text": "Explain the difference between protocol, ceremony, and honours (tashrifat) using one example.",
+      "expected_topic_id": "P1C1-M4",
+      "expected_pages": [
+        10,
+        11
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M1",
+          "title": "تعريف المراسم"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "B18",
+      "category": "basic",
+      "lang": "en",
+      "text": "What are the governing principles of international protocol, and why does sovereign equality matter?",
+      "expected_topic_id": "P2C3-M1",
+      "expected_pages": [
+        192,
+        198
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M1",
+          "title": "تعريف المراسم"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M1",
+        "P2C1-M3",
+        "P2C2-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "B19",
+      "category": "basic",
+      "lang": "en",
+      "text": "What ceremonies surround national flags, anthems and emblems?",
+      "expected_topic_id": "P2C2-M3",
+      "expected_pages": [
+        164,
+        176
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "none",
+      "top3": [],
+      "top3_ids": [],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "B20",
+      "category": "basic",
+      "lang": "en",
+      "text": "What is tashrifat, and what is its purpose when receiving official figures?",
+      "expected_topic_id": "P1C1-M3",
+      "expected_pages": [
+        9,
+        9
+      ],
+      "expected_answer_type": "definition",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "A14",
+      "category": "applied",
+      "lang": "en",
+      "text": "How is precedence arranged among guests at a formal state occasion?",
+      "expected_topic_id": "P2C1-M2-07",
+      "expected_pages": [
+        81,
+        85
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        },
+        {
+          "topic_id": "P2C2-M2",
+          "title": "حفلات العشاء والمآدب الرسمية"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-00",
+        "P2C2-M2",
+        "P2C1-M3"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "A15",
+      "category": "applied",
+      "lang": "en",
+      "text": "What are the stages of an ambassador presenting credentials to a head of state?",
+      "expected_topic_id": "P2C3-M2",
+      "expected_pages": [
+        199,
+        204
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        },
+        {
+          "topic_id": "P2C2-M2",
+          "title": "حفلات العشاء والمآدب الرسمية"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3",
+        "P2C2-M1",
+        "P2C2-M2"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "A17",
+      "category": "applied",
+      "lang": "en",
+      "text": "What is the procedure for flying flags at half-mast during official mourning?",
+      "expected_topic_id": "P2C2-M3",
+      "expected_pages": [
+        164,
+        176
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "A18",
+      "category": "applied",
+      "lang": "en",
+      "text": "What needs to be prepared to organise an international conference with twenty delegations?",
+      "expected_topic_id": "P2C2-M1",
+      "expected_pages": [
+        144,
+        157
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "none",
+      "top3": [],
+      "top3_ids": [],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "A19",
+      "category": "applied",
+      "lang": "ar",
+      "text": "ما إجراءات استقبال وفد رسمي في المطار؟",
+      "expected_topic_id": "P2C1-M4",
+      "expected_pages": [
+        99,
+        116
+      ],
+      "expected_answer_type": "procedure",
+      "stage": "and",
+      "top3": [
+        {
+          "topic_id": "P2C1-M5",
+          "title": "مراسم توديع كبار الشخصيات"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M5"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C02",
+      "category": "complex",
+      "lang": "ar",
+      "text": "قارن بين الأسبقية داخل الدولة والأسبقية بين الدول: ما معيار كل منهما؟",
+      "expected_topic_id": "P2C1-M2-01",
+      "expected_pages": [
+        56,
+        60
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-09",
+          "title": "تعارض معايير الأسبقية"
+        },
+        {
+          "topic_id": "P2C1-M2-04",
+          "title": "الأسبقية في مجال البعثات الدبلوماسية والقنصلية"
+        },
+        {
+          "topic_id": "P1C2-M4",
+          "title": "نشأة البروتوكولات الدبلوماسية الحديثة ومأسستها الدولية"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-09",
+        "P2C1-M2-04",
+        "P1C2-M4"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C05",
+      "category": "complex",
+      "lang": "ar",
+      "text": "متى تتقدم أسبقية المجاملة على القواعد الرسمية للأسبقية، وما حدود ذلك؟",
+      "expected_topic_id": "P2C1-M2-08",
+      "expected_pages": [
+        86,
+        88
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M2",
+          "title": "تعريف البروتوكولات"
+        },
+        {
+          "topic_id": "P2C1-M2-10",
+          "title": "خلاصة الجوانب الثمانية لقواعد الأسبقية البروتوكولية"
+        },
+        {
+          "topic_id": "P2C1-M2-09",
+          "title": "تعارض معايير الأسبقية"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M2",
+        "P2C1-M2-10",
+        "P2C1-M2-09"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C10",
+      "category": "complex",
+      "lang": "ar",
+      "text": "حلل موقفاً يجمع مؤتمراً دولياً يعقبه عشاء رسمي: ما الذي يتغير في الترتيبات البروتوكولية بين الحدثين؟",
+      "expected_topic_id": "P2C2-M1",
+      "expected_pages": [
+        144,
+        157
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-02",
+          "title": "الأسبقية بين الدول"
+        },
+        {
+          "topic_id": "P2C2-00",
+          "title": "تمهيد الفصل الثاني: المراسم العملية وإدارة الأحداث الكبرى"
+        },
+        {
+          "topic_id": "P2C2-X",
+          "title": "خاتمة الفصل الثاني"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-02",
+        "P2C2-00",
+        "P2C2-X"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C11",
+      "category": "complex",
+      "lang": "ar",
+      "text": "حلل العلاقة بين مراسم الأعلام والنشيد ومراسم الهدايا والتوثيق بوصفها رموزاً سيادية.",
+      "expected_topic_id": "P2C2-M3",
+      "expected_pages": [
+        164,
+        176
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C2-X",
+          "title": "خاتمة الفصل الثاني"
+        },
+        {
+          "topic_id": "P2C2-00",
+          "title": "تمهيد الفصل الثاني: المراسم العملية وإدارة الأحداث الكبرى"
+        },
+        {
+          "topic_id": "P2C2-M4",
+          "title": "مراسم تقديم الهدايا والتوثيق الرسمي"
+        }
+      ],
+      "top3_ids": [
+        "P2C2-X",
+        "P2C2-00",
+        "P2C2-M4"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C12",
+      "category": "complex",
+      "lang": "ar",
+      "text": "قارن بين مراسم تقديم أوراق الاعتماد ومراسم توقيع الاتفاقيات من حيث الحساسية الدبلوماسية والإجراءات.",
+      "expected_topic_id": "P2C3-M2",
+      "expected_pages": [
+        199,
+        204
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C3-M3",
+          "title": "بروتوكول توقيع الاتفاقيات والمعاهدات"
+        },
+        {
+          "topic_id": "P2C3-00",
+          "title": "تمهيد الفصل الثالث: البروتوكول الدبلوماسي والمناسبات السيادية والدولية"
+        },
+        {
+          "topic_id": "P2C3-X",
+          "title": "خاتمة الفصل الثالث"
+        }
+      ],
+      "top3_ids": [
+        "P2C3-M3",
+        "P2C3-00",
+        "P2C3-X"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C13",
+      "category": "complex",
+      "lang": "en",
+      "text": "Compare the institutional structure for managing state protocol in general with how protocol is practised in the Republic of Yemen.",
+      "expected_topic_id": "P2C1-M1",
+      "expected_pages": [
+        48,
+        53
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M1",
+          "title": "تعريف المراسم"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M1",
+        "P2C1-M3",
+        "P2C2-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C14",
+      "category": "complex",
+      "lang": "en",
+      "text": "How do contemporary ceremonies and image management differ from traditional court protocol, including in the digital environment?",
+      "expected_topic_id": "P1C2-M5",
+      "expected_pages": [
+        37,
+        39
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M1",
+          "title": "تعريف المراسم"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C15",
+      "category": "complex",
+      "lang": "en",
+      "text": "Compare precedence rules in the United Nations with those in the League of Arab States.",
+      "expected_topic_id": "P2C1-M2-05",
+      "expected_pages": [
+        72,
+        74
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-00",
+        "P2C1-M3",
+        "P2C2-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C16",
+      "category": "complex",
+      "lang": "en",
+      "text": "Two precedence criteria conflict at the same event — seniority in office versus the nature of the occasion. How should the conflict be resolved according to the book?",
+      "expected_topic_id": "P2C1-M2-09",
+      "expected_pages": [
+        89,
+        91
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        },
+        {
+          "topic_id": "P2C3-M4",
+          "title": "البروتوكول في الاحتفالات الوطنية والدينية"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-00",
+        "P2C3-M4",
+        "P2C1-M3"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C17",
+      "category": "complex",
+      "lang": "en",
+      "text": "Compare the ceremonies for receiving and farewelling a visiting head of state.",
+      "expected_topic_id": "P2C1-M4",
+      "expected_pages": [
+        99,
+        116
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        },
+        {
+          "topic_id": "P2C2-M2",
+          "title": "حفلات العشاء والمآدب الرسمية"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3",
+        "P2C2-M1",
+        "P2C2-M2"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C18",
+      "category": "complex",
+      "lang": "en",
+      "text": "Compare the roots of protocol in ancient civilisations with protocol in the Islamic era.",
+      "expected_topic_id": "P1C2-M1",
+      "expected_pages": [
+        16,
+        21
+      ],
+      "expected_answer_type": "comparison",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M1",
+          "title": "تعريف المراسم"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M1",
+        "P2C1-M3",
+        "P2C2-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "C20",
+      "category": "complex",
+      "lang": "ar",
+      "text": "سفيران من الطبقة نفسها قدما أوراقهما في يومين مختلفين، وضيف مجاملة رفيع يحضر المناسبة نفسها؛ رتّبهم وعلل ترتيبك.",
+      "expected_topic_id": "P2C1-M2-04",
+      "expected_pages": [
+        69,
+        71
+      ],
+      "expected_answer_type": "explanation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-08",
+          "title": "أسبقية المجاملة"
+        },
+        {
+          "topic_id": "P2C2-M4",
+          "title": "مراسم تقديم الهدايا والتوثيق الرسمي"
+        },
+        {
+          "topic_id": "P2C1-M2-05",
+          "title": "الأسبقية في الأمم المتحدة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-08",
+        "P2C2-M4",
+        "P2C1-M2-05"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "S12",
+      "category": "sources",
+      "lang": "en",
+      "text": "Which article of the Vienna Convention on Diplomatic Relations governs the inviolability of mission premises?",
+      "expected_topic_id": "APP1-B",
+      "expected_pages": [
+        225,
+        229
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3",
+        "P2C2-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "S14",
+      "category": "sources",
+      "lang": "en",
+      "text": "What duties does Article 41 of the Vienna Convention impose on diplomatic agents?",
+      "expected_topic_id": "APP1-C",
+      "expected_pages": [
+        230,
+        236
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "APP2",
+          "title": "القرار الجمهوري بالقانون رقم (41) لسنة 1991م (بشأن المراسم — نص القانون اليمني)"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        }
+      ],
+      "top3_ids": [
+        "APP2",
+        "P2C1-M3",
+        "P2C2-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "S18",
+      "category": "sources",
+      "lang": "en",
+      "text": "On which pages does the book discuss precedence in the League of Arab States?",
+      "expected_topic_id": "P2C1-M2-06",
+      "expected_pages": [
+        75,
+        80
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-00",
+        "P2C1-M3",
+        "P2C2-M1"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "S19",
+      "category": "sources",
+      "lang": "en",
+      "text": "Which Vienna Convention article sets out how the precedence of heads of mission is determined, and what is its rule?",
+      "expected_topic_id": "APP1-B",
+      "expected_pages": [
+        225,
+        229
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        },
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3",
+        "P2C2-M1",
+        "P2C1-M2-00"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "S20",
+      "category": "sources",
+      "lang": "en",
+      "text": "What is the book's own source for its account of precedence in the League of Arab States — is there a verified external source?",
+      "expected_topic_id": "P2C1-M2-06",
+      "expected_pages": [
+        75,
+        80
+      ],
+      "expected_answer_type": "citation",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        },
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3",
+        "P2C2-M1",
+        "P2C1-M2-00"
+      ],
+      "hit_at_3": false,
+      "refusal_correct": null,
+      "failed": true
+    },
+    {
+      "id": "H01",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "ما نص المادة 77 من اتفاقية فيينا للعلاقات الدبلوماسية 1961؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C3-M3",
+          "title": "بروتوكول توقيع الاتفاقيات والمعاهدات"
+        },
+        {
+          "topic_id": "APP1-C",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 34–53 والأحكام الختامية (الامتيازات، الواجبات، إنهاء المهام، التصديق والانضمام)"
+        },
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        }
+      ],
+      "top3_ids": [
+        "P2C3-M3",
+        "APP1-C",
+        "APP1-B"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H02",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "ما الذي تنص عليه المادة 5 من اتفاقية جنيف للمراسم الدبلوماسية 1985؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "APP1-C",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 34–53 والأحكام الختامية (الامتيازات، الواجبات، إنهاء المهام، التصديق والانضمام)"
+        },
+        {
+          "topic_id": "P2C3-M3",
+          "title": "بروتوكول توقيع الاتفاقيات والمعاهدات"
+        },
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        }
+      ],
+      "top3_ids": [
+        "APP1-C",
+        "P2C3-M3",
+        "APP1-B"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H03",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "ما مرتبة لقب «سفير النوايا الحسنة الكونية» في جدول الأسبقية؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-04",
+          "title": "الأسبقية في مجال البعثات الدبلوماسية والقنصلية"
+        },
+        {
+          "topic_id": "P2C3-M2",
+          "title": "مراسم تقديم أوراق اعتماد السفراء"
+        },
+        {
+          "topic_id": "FM-01",
+          "title": "المادة الافتتاحية: الغلاف، الإهداء، التقديم، فكرة الكتاب، المقدمة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-04",
+        "P2C3-M2",
+        "FM-01"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H04",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "كيف تُرتب أسبقية سفير جمهورية زامبستان لدى الدولة المضيفة؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-04",
+          "title": "الأسبقية في مجال البعثات الدبلوماسية والقنصلية"
+        },
+        {
+          "topic_id": "P2C3-M2",
+          "title": "مراسم تقديم أوراق اعتماد السفراء"
+        },
+        {
+          "topic_id": "P2C1-M2-03",
+          "title": "أسبقية الملوك ورؤساء الدول"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-04",
+        "P2C3-M2",
+        "P2C1-M2-03"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H05",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "ما قواعد الأسبقية المعتمدة في «منظمة التعاون البروتوكولي العالمي»؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-03",
+          "title": "أسبقية الملوك ورؤساء الدول"
+        },
+        {
+          "topic_id": "P2C3-M1",
+          "title": "الدبلوماسية والمراسم والبروتوكولات الدولية"
+        },
+        {
+          "topic_id": "P1-X",
+          "title": "خاتمة الباب الأول"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-03",
+        "P2C3-M1",
+        "P1-X"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H06",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "كم طلقة مدفعية يحددها الكتاب عند استقبال رئيس دولة؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "CONC",
+          "title": "خاتمة الكتاب"
+        },
+        {
+          "topic_id": "P1C1-M4",
+          "title": "الفروق بين المراسم والبروتوكولات والتشريفات"
+        },
+        {
+          "topic_id": "P2C1-M2-04",
+          "title": "الأسبقية في مجال البعثات الدبلوماسية والقنصلية"
+        }
+      ],
+      "top3_ids": [
+        "CONC",
+        "P1C1-M4",
+        "P2C1-M2-04"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H07",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "صحيح أم خطأ: يقرر الكتاب أن الأسبقية بين الدول تحدد بحجم الدولة وثروتها لا بالمساواة السيادية؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "REF",
+          "title": "مراجع الكتاب (القرآن الكريم، كتب عربية، وثائق وأنظمة رسمية، مراجع أجنبية)"
+        },
+        {
+          "topic_id": "P1C1-M2",
+          "title": "تعريف البروتوكولات"
+        },
+        {
+          "topic_id": "FM-01",
+          "title": "المادة الافتتاحية: الغلاف، الإهداء، التقديم، فكرة الكتاب، المقدمة"
+        }
+      ],
+      "top3_ids": [
+        "REF",
+        "P1C1-M2",
+        "FM-01"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H08",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "ما بروتوكول إطلاق الأقمار الصناعية واستقبال رواد الفضاء حسب الكتاب؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "FM-01",
+          "title": "المادة الافتتاحية: الغلاف، الإهداء، التقديم، فكرة الكتاب، المقدمة"
+        },
+        {
+          "topic_id": "CONC",
+          "title": "خاتمة الكتاب"
+        },
+        {
+          "topic_id": "IDX",
+          "title": "فهرس الكتاب والهوامش الختامية (34 هامشاً مرقماً)"
+        }
+      ],
+      "top3_ids": [
+        "FM-01",
+        "CONC",
+        "IDX"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H09",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "اشرح المادة 54 من اتفاقية فيينا للعلاقات الدبلوماسية.",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "APP1-C",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 34–53 والأحكام الختامية (الامتيازات، الواجبات، إنهاء المهام، التصديق والانضمام)"
+        },
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        },
+        {
+          "topic_id": "P2C3-M3",
+          "title": "بروتوكول توقيع الاتفاقيات والمعاهدات"
+        }
+      ],
+      "top3_ids": [
+        "APP1-C",
+        "APP1-B",
+        "P2C3-M3"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H10",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "من أول سفير لليمن لدى الأمم المتحدة حسب ما يذكره الكتاب؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-05",
+          "title": "الأسبقية في الأمم المتحدة"
+        },
+        {
+          "topic_id": "P2C3-M1",
+          "title": "الدبلوماسية والمراسم والبروتوكولات الدولية"
+        },
+        {
+          "topic_id": "P2C3-M2",
+          "title": "مراسم تقديم أوراق اعتماد السفراء"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-05",
+        "P2C3-M1",
+        "P2C3-M2"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H11",
+      "category": "hallucination",
+      "lang": "en",
+      "text": "Quote Article 60 of the Vienna Convention on Diplomatic Relations.",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3",
+        "P2C2-M1"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H12",
+      "category": "hallucination",
+      "lang": "en",
+      "text": "How is the ambassador of the Republic of Zambrania ranked in precedence?",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        },
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3",
+        "P2C2-M1",
+        "P2C1-M2-00"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H13",
+      "category": "hallucination",
+      "lang": "en",
+      "text": "What is the precedence rank of the title 'Grand Ambassador Plenipotentiary of the Universe'?",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C2-M1",
+          "title": "بروتوكول المؤتمرات والاجتماعات الدولية"
+        },
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M3",
+        "P2C2-M1",
+        "P2C1-M2-00"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H14",
+      "category": "hallucination",
+      "lang": "en",
+      "text": "What does the book say about protocol for a diplomatic mission to Mars?",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P1C1-M1",
+          "title": "تعريف المراسم"
+        }
+      ],
+      "top3_ids": [
+        "P1C1-M1"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H15",
+      "category": "hallucination",
+      "lang": "en",
+      "text": "True or false: the book says precedence between states is decided by the wealth of the state, not sovereign equality?",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C2-M2",
+          "title": "حفلات العشاء والمآدب الرسمية"
+        },
+        {
+          "topic_id": "P2C1-M3",
+          "title": "تنظيم الزيارات الرسمية واستراتيجياتها"
+        },
+        {
+          "topic_id": "P2C1-M2-00",
+          "title": "قواعد الأسبقية البروتوكولية — مقدمة عامة"
+        }
+      ],
+      "top3_ids": [
+        "P2C2-M2",
+        "P2C1-M3",
+        "P2C1-M2-00"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H16",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "ما نص المادة 100 من اتفاقية فيينا 1961؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C3-M3",
+          "title": "بروتوكول توقيع الاتفاقيات والمعاهدات"
+        },
+        {
+          "topic_id": "APP1-C",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 34–53 والأحكام الختامية (الامتيازات، الواجبات، إنهاء المهام، التصديق والانضمام)"
+        },
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        }
+      ],
+      "top3_ids": [
+        "P2C3-M3",
+        "APP1-C",
+        "APP1-B"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H17",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "ما بروتوكول استقبال وفد رسمي من كوكب المريخ؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C2-M2",
+          "title": "حفلات العشاء والمآدب الرسمية"
+        },
+        {
+          "topic_id": "P2C1-M4V",
+          "title": "ملخص بصري لمراحل مراسم الاستقبال"
+        },
+        {
+          "topic_id": "P2C1-M5",
+          "title": "مراسم توديع كبار الشخصيات"
+        }
+      ],
+      "top3_ids": [
+        "P2C2-M2",
+        "P2C1-M4V",
+        "P2C1-M5"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H18",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "هل يقدم السفير أوراق اعتماده إلى رئيس الوزراء بدلاً من رئيس الدولة حسب الكتاب؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-04",
+          "title": "الأسبقية في مجال البعثات الدبلوماسية والقنصلية"
+        },
+        {
+          "topic_id": "P2C3-M2",
+          "title": "مراسم تقديم أوراق اعتماد السفراء"
+        },
+        {
+          "topic_id": "APP1-B",
+          "title": "اتفاقية فيينا للعلاقات الدبلوماسية 1961 — المواد 13–33 (طبقات رؤساء البعثات والأسبقية، حرمة المقر والشخص، الحصانات)"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-04",
+        "P2C3-M2",
+        "APP1-B"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H19",
+      "category": "hallucination",
+      "lang": "en",
+      "text": "According to the book, exactly how many gun salutes are fired when a king is received — 21 or 101?",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "or",
+      "top3": [
+        {
+          "topic_id": "P2C2-M2",
+          "title": "حفلات العشاء والمآدب الرسمية"
+        }
+      ],
+      "top3_ids": [
+        "P2C2-M2"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    },
+    {
+      "id": "H20",
+      "category": "hallucination",
+      "lang": "ar",
+      "text": "ما قواعد الأسبقية في «منظمة الدول البروتوكولية»؟",
+      "expected_topic_id": null,
+      "expected_pages": null,
+      "expected_answer_type": "refusal",
+      "stage": "and",
+      "top3": [
+        {
+          "topic_id": "P2C1-M2-03",
+          "title": "أسبقية الملوك ورؤساء الدول"
+        },
+        {
+          "topic_id": "P2C1-M2-02",
+          "title": "الأسبقية بين الدول"
+        },
+        {
+          "topic_id": "P2C1-M2-05",
+          "title": "الأسبقية في الأمم المتحدة"
+        }
+      ],
+      "top3_ids": [
+        "P2C1-M2-03",
+        "P2C1-M2-02",
+        "P2C1-M2-05"
+      ],
+      "hit_at_3": null,
+      "refusal_correct": false,
+      "failed": true
+    }
+  ]
+}
