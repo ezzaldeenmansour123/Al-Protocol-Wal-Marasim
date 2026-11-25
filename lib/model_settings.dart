@@ -167,7 +167,10 @@ class _ModelSettingsSectionState extends State<ModelSettingsSection> {
         ),
         RadioGroup<LocalModelSpec>(
           groupValue: _spec,
-          onChanged: _busy ? null : (v) => v != null ? _selectModel(v) : null,
+          onChanged: (v) {
+            if (_busy) return;
+            if (v != null) _selectModel(v);
+          },
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
