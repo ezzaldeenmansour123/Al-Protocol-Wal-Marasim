@@ -1,5 +1,4 @@
 import 'package:material_ui/material_ui.dart';
-import 'academy.dart';
 import 'app_state.dart';
 import 'assistant.dart';
 import 'db.dart';

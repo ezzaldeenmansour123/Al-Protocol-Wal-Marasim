@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart'
 import 'package:material_ui/material_ui.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'academy.dart';
 import 'app_state.dart';
 import 'assistant.dart';
 import 'db.dart';
