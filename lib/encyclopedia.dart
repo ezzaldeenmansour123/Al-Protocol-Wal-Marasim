@@ -17,6 +17,10 @@ class _CountriesPageState extends State<CountriesPage> {
   List<Country> _all = [];
   List<Country> _shown = [];
   bool _loading = true;
+  // FIX (device hang): _load used to await Repo with no try/catch, so any
+  // throw from Repo.i.db / allCountries() left _loading true forever and
+  // the page spun eternally. A failed load now shows an error + retry.
+  bool _loadFailed = false;
 
   @override
   void initState() {
@@ -25,13 +29,27 @@ class _CountriesPageState extends State<CountriesPage> {
   }
 
   Future<void> _load() async {
-    final all = await Repo.i.allCountries();
-    if (!mounted) return;
-    setState(() {
-      _all = all;
-      _shown = all;
-      _loading = false;
-    });
+    if (mounted) {
+      setState(() {
+        _loading = true;
+        _loadFailed = false;
+      });
+    }
+    try {
+      final all = await Repo.i.allCountries();
+      if (!mounted) return;
+      setState(() {
+        _all = all;
+        _shown = all;
+        _loading = false;
+      });
+    } catch (_) {
+      if (!mounted) return;
+      setState(() {
+        _loading = false;
+        _loadFailed = true;
+      });
+    }
   }
 
   Future<void> _onSearch(String q) async {
@@ -39,8 +57,14 @@ class _CountriesPageState extends State<CountriesPage> {
       setState(() => _shown = _all);
       return;
     }
-    final res = await Repo.i.searchCountries(q);
-    if (mounted) setState(() => _shown = res);
+    // A failed search must never blank the list: keep showing the
+    // current results instead of throwing into an unhandled Future.
+    try {
+      final res = await Repo.i.searchCountries(q);
+      if (mounted) setState(() => _shown = res);
+    } catch (_) {
+      // Keep the current list; the user can retry by typing again.
+    }
   }
 
   @override
@@ -78,7 +102,14 @@ class _CountriesPageState extends State<CountriesPage> {
           Expanded(
             child: _loading
                 ? const Center(child: CircularProgressIndicator())
-                : _shown.isEmpty
+                : _loadFailed
+                    ? EmptyState(
+                        icon: Icons.error_outline,
+                        text: 'تعذّر تحميل قائمة الدول. حاول مرة أخرى.',
+                        onRetry: _load,
+                        retryLabel: trc(context, 'retry'),
+                      )
+                    : _shown.isEmpty
                     ? EmptyState(
                         icon: Icons.public_off,
                         text: trc(context, 'countries_no_match'))
@@ -261,6 +292,14 @@ class ProtocolGuidePage extends StatefulWidget {
 class _ProtocolGuidePageState extends State<ProtocolGuidePage> {
   List<String> _sections = [];
   bool _loading = true;
+  // FIX (device hang): _load used to await Repo.i.sections() with no
+  // try/catch. sections() awaits the Repo.i.db getter, whose openDatabase
+  // / onCreate path is unguarded (see lib/db.dart), so any throw there —
+  // e.g. a local DB whose schema predates the `meta` table that _onCreate
+  // writes, or a missing `articles` table that onCreate never creates —
+  // left _loading true forever: an eternal empty spinner. A failed load
+  // now shows an error state with a retry button instead.
+  bool _loadFailed = false;
 
   @override
   void initState() {
@@ -269,12 +308,24 @@ class _ProtocolGuidePageState extends State<ProtocolGuidePage> {
   }
 
   Future<void> _load() async {
-    setState(() => _loading = true);
-    final s = await Repo.i.sections();
     if (mounted) {
+      setState(() {
+        _loading = true;
+        _loadFailed = false;
+      });
+    }
+    try {
+      final s = await Repo.i.sections();
+      if (!mounted) return;
       setState(() {
         _sections = s;
         _loading = false;
+      });
+    } catch (_) {
+      if (!mounted) return;
+      setState(() {
+        _loading = false;
+        _loadFailed = true;
       });
     }
   }
@@ -304,10 +355,17 @@ class _ProtocolGuidePageState extends State<ProtocolGuidePage> {
       appBar: AppBar(title: Text(trc(context, 'guide_title'))),
       body: _loading
           ? const Center(child: CircularProgressIndicator())
-          : _sections.isEmpty
+          : _loadFailed
               ? EmptyState(
                   icon: Icons.error_outline,
                   text: trc(context, 'guide_empty'),
+                  onRetry: _load,
+                  retryLabel: trc(context, 'retry'),
+                )
+              : _sections.isEmpty
+              ? EmptyState(
+                  icon: Icons.menu_book,
+                  text: 'لا توجد أقسام في الدليل بعد.',
                   onRetry: _load,
                   retryLabel: trc(context, 'retry'),
                 )
@@ -350,6 +408,10 @@ class SectionArticlesPage extends StatefulWidget {
 class _SectionArticlesPageState extends State<SectionArticlesPage> {
   List<Article> _articles = [];
   bool _loading = true;
+  // FIX (device hang): same as ProtocolGuidePage — _load awaited
+  // Repo.i.articlesBySection() with no try/catch, so any throw left the
+  // spinner on forever. Failed loads now show an error + retry.
+  bool _loadFailed = false;
 
   @override
   void initState() {
@@ -358,12 +420,24 @@ class _SectionArticlesPageState extends State<SectionArticlesPage> {
   }
 
   Future<void> _load() async {
-    setState(() => _loading = true);
-    final a = await Repo.i.articlesBySection(widget.section);
     if (mounted) {
+      setState(() {
+        _loading = true;
+        _loadFailed = false;
+      });
+    }
+    try {
+      final a = await Repo.i.articlesBySection(widget.section);
+      if (!mounted) return;
       setState(() {
         _articles = a;
         _loading = false;
+      });
+    } catch (_) {
+      if (!mounted) return;
+      setState(() {
+        _loading = false;
+        _loadFailed = true;
       });
     }
   }
@@ -374,7 +448,14 @@ class _SectionArticlesPageState extends State<SectionArticlesPage> {
       appBar: AppBar(title: Text(widget.section)),
       body: _loading
           ? const Center(child: CircularProgressIndicator())
-          : _articles.isEmpty
+          : _loadFailed
+              ? EmptyState(
+                  icon: Icons.error_outline,
+                  text: 'تعذّر تحميل مقالات هذا القسم. حاول مرة أخرى.',
+                  onRetry: _load,
+                  retryLabel: trc(context, 'retry'),
+                )
+              : _articles.isEmpty
               ? EmptyState(
                   icon: Icons.article_outlined,
                   text: trc(context, 'section_empty'),
