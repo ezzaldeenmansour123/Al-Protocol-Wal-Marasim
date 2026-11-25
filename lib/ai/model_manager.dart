@@ -258,14 +258,13 @@ class ModelManager {
   }
 
   Future<String> _sha256Of(File file) async {
-    final output = AccumulatorSink<Digest>();
-    final input = sha256.startChunkedConversion(output);
-    final stream = file.openRead();
-    await for (final chunk in stream) {
-      input.add(chunk);
-    }
-    input.close();
-    return output.events.single.toString();
+    // Streaming hash without AccumulatorSink: that class is not
+    // visible to the analyzer on the CI toolchain (Flutter 3.50 /
+    // Dart 3.10 reported it undefined even with dart:convert
+    // imported), while Hash.bind works on every version and never
+    // loads the whole (multi-GB) file into memory.
+    final digest = await sha256.bind(file.openRead()).single;
+    return digest.toString();
   }
 
   /// ينزّل النموذج (مع استئناف من الملف الجزئي عند وجوده).
