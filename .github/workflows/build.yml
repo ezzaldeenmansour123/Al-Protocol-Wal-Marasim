@@ -1,0 +1,214 @@
+name: Build PROTOCOL & CEREMONIAL APK
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Flutter 3.50.1
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.50.1'
+          channel: stable
+
+      - name: Build protocol database
+        run: |
+          python3 tools/build_db.py tools/seed assets/marasim.db
+          ls -lh assets/marasim.db assets/marasim.db.sha256
+
+      - name: Download Amiri and Cairo fonts
+        run: |
+          mkdir -p assets/fonts
+          # Fonts are NOT committed in the repo (binary files are excluded
+          # from the push). They are downloaded fresh on every build and
+          # validated as real TTFs; a failed download fails the build
+          # instead of producing a broken APK without fonts.
+          python3 - <<'PY'
+          import os, subprocess
+          from urllib.request import Request, urlopen
+          def fetch(url, dest):
+              req = Request(url, headers={"User-Agent": "Mozilla/5.0"})
+              with urlopen(req, timeout=30) as resp:
+                  data = resp.read()
+              if len(data) < 20000:
+                  raise ValueError("download too small")
+              open(dest, "wb").write(data)
+              print(f"downloaded {dest} ({len(data)} bytes)")
+          try:
+              fetch("https://github.com/google/fonts/raw/main/ofl/amiri/Amiri-Regular.ttf", "/tmp/Amiri-Regular.ttf")
+              fetch("https://github.com/google/fonts/raw/main/ofl/amiri/Amiri-Bold.ttf", "/tmp/Amiri-Bold.ttf")
+              for f in ("/tmp/Amiri-Regular.ttf", "/tmp/Amiri-Bold.ttf"):
+                  os.replace(f, os.path.join("assets/fonts", os.path.basename(f)))
+              print("Amiri updated")
+          except Exception as exc:
+              raise RuntimeError(f"Amiri download failed ({exc}); fonts are not committed in the repo, so the build cannot continue without them")
+          try:
+              subprocess.run(["pip", "install", "-q", "fonttools"], check=True)
+              fetch("https://github.com/google/fonts/raw/main/ofl/cairo/Cairo%5Bslnt%2Cwght%5D.ttf", "/tmp/Cairo-VF.ttf")
+              for weight, name in ((400, "Cairo-Regular.ttf"), (700, "Cairo-Bold.ttf")):
+                  subprocess.run(["python3", "-m", "fontTools.varLib.instancer",
+                                  "/tmp/Cairo-VF.ttf", f"wght={weight}",
+                                  "-o", f"/tmp/{name}"], check=True)
+                  from fontTools.ttLib import TTFont
+                  t = TTFont(f"/tmp/{name}")
+                  assert t["OS/2"].usWeightClass == weight, f"bad weight in {name}"
+                  os.replace(f"/tmp/{name}", os.path.join("assets/fonts", name))
+                  print(f"Cairo {name} OK (weight {weight})")
+          except Exception as exc:
+              raise RuntimeError(f"Cairo download/instancing failed ({exc}); fonts are not committed in the repo, so the build cannot continue without them")
+          PY
+          ls -lh assets/fonts/
+
+      - name: Download hero photos
+        run: |
+          pip install -q pillow
+          mkdir -p assets/images
+          python3 - <<'PY'
+          import os
+          from PIL import Image, ImageDraw
+          from urllib.request import Request, urlopen
+          # Verified 2026-11-24 (HTTP 200 each): Unsplash diplomatic photos.
+          IMAGES = [
+              ("hero1.jpg", "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1200&q=80&auto=format&fit=crop"),
+              ("hero2.jpg", "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80&auto=format&fit=crop"),
+              ("hero3.jpg", "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1200&q=80&auto=format&fit=crop"),
+              ("hero4.jpg", "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1200&q=80&auto=format&fit=crop"),
+              ("hero5.jpg", "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80&auto=format&fit=crop"),
+              ("hero6.jpg", "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80&auto=format&fit=crop"),
+              ("hero7.jpg", "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80&auto=format&fit=crop"),
+              ("hero8.jpg", "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=1200&q=80&auto=format&fit=crop"),
+          ]
+          NAVY = (11, 34, 57)
+          GOLD = (198, 161, 91)
+          for name, url in IMAGES:
+              path = os.path.join("assets/images", name)
+              try:
+                  req = Request(url, headers={"User-Agent": "Mozilla/5.0"})
+                  with urlopen(req, timeout=30) as resp:
+                      data = resp.read()
+                  if len(data) < 20000:
+                      raise ValueError("download too small")
+                  open(path, "wb").write(data)
+                  print(f"{name}: downloaded {len(data)} bytes")
+              except Exception as exc:  # noqa: BLE001 - placeholder must never break the build
+                  print(f"{name}: download failed ({exc}); generating placeholder")
+                  img = Image.new("RGB", (1200, 800), NAVY)
+                  d = ImageDraw.Draw(img)
+                  d.ellipse([450, 150, 750, 450], outline=GOLD, width=10)
+                  d.ellipse([500, 200, 700, 400], fill=GOLD)
+                  d.rectangle([560, 450, 640, 650], fill=GOLD)
+                  d.rectangle([500, 650, 700, 680], fill=GOLD)
+                  img.save(path, quality=85)
+          PY
+          ls -lh assets/images/
+
+      - name: Generate app logo (assets/logo.png)
+        run: |
+          pip install -q pillow
+          python3 - <<'PY'
+          import sys
+          sys.path.insert(0, 'tools')
+          from make_icon import fallback_icon
+          # assets/logo.png is a binary and is not stored in the repo.
+          # Generate it here from the same fallback emblem (gold globe on
+          # a column, deep navy, no text) that make_icon.py draws for the
+          # launcher icon, because pubspec declares it as an asset and
+          # the Flutter build fails if it is missing.
+          fallback_icon(512).save('assets/logo.png')
+          print('assets/logo.png generated (512x512)')
+          PY
+          ls -lh assets/logo.png
+
+      - name: Create Android project files
+        run: |
+          flutter create --platforms=android --org com.protocol --project-name marasim .
+          # Keep the repo's own test/ (retrieval tests); drop only the
+          # template counter test that `flutter create` regenerates,
+          # which would fail against this app.
+          rm -f test/widget_test.dart
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('android/app/src/main/AndroidManifest.xml')
+          t = p.read_text(encoding='utf-8')
+          t = t.replace('android:label="marasim"', 'android:label="البروتوكول والمراسم"')
+          perms = ('    <uses-permission android:name="android.permission.INTERNET"/>\n'
+                   '    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>\n'
+                   '    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>\n'
+                   '    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>\n')
+          assert 'android.permission.INTERNET' not in t
+          t = t.replace('</manifest>', perms + '</manifest>')
+          p.write_text(t, encoding='utf-8')
+          print('manifest OK')
+          # Enable core library desugaring (required by the notifications
+          # plugin). compileSdk stays at Flutter's default 36: the
+          # notifications plugin is pinned to 22.3.3 (see pubspec), the last
+          # release that compiles against SDK 36 — 23.x needs SDK 37, which
+          # the Actions runner cannot install.
+          g = Path('android/app/build.gradle.kts')
+          gt = g.read_text(encoding='utf-8')
+          assert 'compileSdk = flutter.compileSdkVersion' in gt
+          assert 'sourceCompatibility = JavaVersion.VERSION_17' in gt
+          gt = gt.replace('sourceCompatibility = JavaVersion.VERSION_17',
+                          'isCoreLibraryDesugaringEnabled = true\n'
+                          '        sourceCompatibility = JavaVersion.VERSION_17')
+          assert '}\n\nkotlin {' in gt
+          gt = gt.replace('}\n\nkotlin {',
+                          '}\n\ndependencies {\n'
+                          '    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")\n'
+                          '}\n\nkotlin {', 1)
+          g.write_text(gt, encoding='utf-8')
+          print('desugaring enabled')
+          PY
+          python3 tools/make_icon.py android/app/src/main/res
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Test
+        # Runs the flutter_test wrappers for the pure-Dart retrieval
+        # checks (R1: core + refusal guard). The wrapper files are
+        # named explicitly because the pure scripts register no
+        # flutter_test cases of their own (they run with plain `dart`).
+        run: |
+          flutter test test/retrieval_core_flutter_test.dart
+          flutter test test/refusal_guard_flutter_test.dart
+          flutter test test/prompts_flutter_test.dart
+          flutter test test/model_catalog_flutter_test.dart
+          flutter test test/provider_selector_flutter_test.dart
+
+      - name: Build release APK
+        run: flutter build apk --release
+
+      - name: Rename APK
+        run: cp build/app/outputs/flutter-apk/app-release.apk Protocol_Ceremonial.apk
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: protocol-ceremonial-apk
+          path: Protocol_Ceremonial.apk
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: PROTOCOL & CEREMONIAL build ${{ github.run_number }}
+          files: Protocol_Ceremonial.apk
