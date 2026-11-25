@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up Java 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
@@ -36,7 +36,12 @@ jobs:
         # (python3 -m pip). A bare `pip` on the runner targets a different
         # Python, which is why the first builds failed with
         # "No module named 'fontTools'" even though pip reported success.
-        run: python3 -m pip install -q --break-system-packages fonttools pillow
+        # The import check below fails fast (with a clear message) if the
+        # install did not land where this interpreter looks.
+        run: |
+          python3 -m pip install -q --break-system-packages fonttools pillow
+          which python3 && python3 --version
+          python3 -c "import fontTools, PIL; print('fontTools OK', fontTools.version)"
 
       - name: Download Amiri and Cairo fonts
         run: |
@@ -48,6 +53,14 @@ jobs:
           python3 - <<'PY'
           import os, subprocess, sys
           from urllib.request import Request, urlopen
+          print("heredoc interpreter:", sys.executable)
+          # NOTE (2026-11-25): the first CI builds failed here with
+          # "No module named 'fontTools'" on the in-process
+          # `from fontTools.ttLib import TTFont`, even though the
+          # `python3 -m fontTools.varLib.instancer` subprocess in the same
+          # step imported fontTools fine. Validation is therefore done
+          # through a `python3 -c` subprocess (the interpreter proven to
+          # import fontTools), never as an in-process import.
           def fetch(url, dest):
               req = Request(url, headers={"User-Agent": "Mozilla/5.0"})
               with urlopen(req, timeout=30) as resp:
@@ -71,9 +84,15 @@ jobs:
                   subprocess.run(["python3", "-m", "fontTools.varLib.instancer",
                                   "/tmp/Cairo-VF.ttf", f"wght={weight}",
                                   "-o", f"/tmp/{name}"], check=True)
-                  from fontTools.ttLib import TTFont
-                  t = TTFont(f"/tmp/{name}")
-                  assert t["OS/2"].usWeightClass == weight, f"bad weight in {name}"
+                  # Validate the instanced font in a subprocess (see note
+                  # above): in-process `from fontTools.ttLib import TTFont`
+                  # failed on the runner even when the instancer worked.
+                  subprocess.run(["python3", "-c",
+                                  "import sys; from fontTools.ttLib import TTFont; "
+                                  "t = TTFont(sys.argv[1]); "
+                                  "assert t['OS/2'].usWeightClass == int(sys.argv[2]), "
+                                  "'bad weight in ' + sys.argv[1]",
+                                  f"/tmp/{name}", str(weight)], check=True)
                   os.replace(f"/tmp/{name}", os.path.join("assets/fonts", name))
                   print(f"Cairo {name} OK (weight {weight})")
           except Exception as exc:
