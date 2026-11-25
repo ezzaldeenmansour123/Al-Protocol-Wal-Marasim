@@ -6,6 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'academy.dart';
 import 'app_state.dart';
 import 'assistant.dart';
+import 'book_encyclopedia.dart';
 import 'db.dart';
 import 'encyclopedia.dart';
 import 'library.dart';
@@ -369,6 +370,64 @@ class _HomeTabState extends State<HomeTab> {
                       ),
                     ),
                   ),
+              const SizedBox(height: 14),
+              // The book itself, featured on Home: opens the book
+              // encyclopedia (54 topics in the book's own structure)
+              // directly. No cover image is bundled in assets/images in
+              // this tree, so the card uses a book icon — no cover art
+              // is invented.
+              InkWell(
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => const BookEncyclopediaPage())),
+                borderRadius: BorderRadius.circular(16),
+                child: Container(
+                  padding: const EdgeInsets.all(14),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).cardColor,
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(color: AppColors.gold, width: 1.5),
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: AppColors.navy,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: const Icon(Icons.menu_book,
+                            color: AppColors.gold, size: 32),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              'البروتوكول والمراسم',
+                              style: TextStyle(
+                                fontFamily: 'Amiri',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              'تأليف أسعد محمد منصور • 54 موضوعاً ببنية الكتاب',
+                              style: TextStyle(
+                                fontSize: 12.5,
+                                color: context.mutedColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const Icon(Icons.arrow_back_ios, size: 16),
+                    ],
+                  ),
+                ),
+              ),
               const SizedBox(height: 14),
               // AI assistant banner — the most prominent section (§4.2).
               InkWell(
@@ -1068,6 +1127,20 @@ class AboutPage extends StatelessWidget {
                         const Icon(Icons.open_in_new, size: 16),
                     onTap: () => _open(
                         context, Uri(scheme: 'tel', path: '770642229')),
+                  ),
+                  const Divider(height: 1),
+                  ListTile(
+                    leading:
+                        const Icon(Icons.link, color: AppColors.gold),
+                    title: Text(trc(context, 'about_github_label')),
+                    subtitle: const Text(
+                        'https://github.com/ezzaldeenmansour123',
+                        textDirection: TextDirection.ltr,
+                        textAlign: TextAlign.right),
+                    trailing:
+                        const Icon(Icons.open_in_new, size: 16),
+                    onTap: () => _open(context,
+                        Uri.parse('https://github.com/ezzaldeenmansour123')),
                   ),
                 ],
               ),
