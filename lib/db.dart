@@ -824,6 +824,13 @@ class Repo {
   /// جداول قاعدة المعرفة (KNOWLEDGE_BASE_REPORT.md §5) + جدول
   /// sources العام (V2_PLAN §3.1) + أعمدة articles الجديدة.
   Future<void> _ensureV2Schema(DatabaseExecutor db) async {
+    // إصلاح جهاز (2026-11-25): جدول meta لم يكن يُنشأ هنا أبداً
+    // (ينشئه باني الأصول فقط)، فأي قاعدة تفتح عبر onCreate بلا meta
+    // كانت ترمي 'no such table: meta' عند _setMeta فيفشل openDatabase
+    // كله وتعلق الموسوعة على مؤشر تحميل. المخطط مطابق لـ
+    // tools/build_db.py (CREATE TABLE meta(key TEXT PRIMARY KEY, value TEXT)).
+    await db.execute(
+        'CREATE TABLE IF NOT EXISTS meta(key TEXT PRIMARY KEY, value TEXT)');
     await db.execute('''
       CREATE TABLE IF NOT EXISTS kb_topics (
         id            TEXT PRIMARY KEY,
@@ -1336,6 +1343,26 @@ class Repo {
       return KbTopic.fromMap(rows.first);
     } catch (_) {
       return null;
+    }
+  }
+
+  /// كل مواضيع الكتاب الـ54 بترتيب صفحات الكتاب، لعرض الموسوعة ببنية
+  /// الكتاب (أجزاء ← فصول ← مباحث ← موضوع). المادة الافتتاحية بلا ترقيم
+  /// مطبوع (book_page_start null) تأتي أولاً. لا يرمي أبداً: قاعدة
+  /// قديمة بلا الجدول تعيد []، كما في بقية دوال kb_* — وواجهة
+  /// الموسوعة تعامل القائمة الفارغة كحالة «محتوى غير متاح» مع إعادة
+  /// محاولة، لا كمؤشر تحميل أبدي.
+  Future<List<KbTopic>> allKbTopics() async {
+    final d = await db;
+    try {
+      final rows = await d.query(
+        'kb_topics',
+        orderBy:
+            '(book_page_start IS NULL) DESC, book_page_start, pdf_page_start, id',
+      );
+      return rows.map(KbTopic.fromMap).toList();
+    } catch (_) {
+      return [];
     }
   }
 
