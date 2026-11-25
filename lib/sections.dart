@@ -1,6 +1,7 @@
 import 'package:material_ui/material_ui.dart';
 import 'app_state.dart';
 import 'assistant.dart';
+import 'book_encyclopedia.dart';
 import 'db.dart';
 import 'encyclopedia.dart';
 import 'library.dart';
@@ -75,10 +76,45 @@ class _LastReadCardState extends State<LastReadCard> {
   }
 }
 
-/// 1. الموسوعة — hub for the protocol guide, the countries encyclopedia
-/// and references & sources (the former Library page).
+/// 1. الموسوعة — تبويبان: الأول موسوعة الكتاب نفسه (كتاب
+/// «البروتوكول والمراسم» لأسعد منصور، 54 موضوعاً ببنية الكتاب)،
+/// والثاني دليل مراسيم الـ49 مقالاً ودليل الدول والمراجع كما كان.
+/// الكتاب هو الواجهة الأولى للتبويب؛ وكل ما كان موجوداً يبقى reachable
+/// من التبويب الثاني.
 class EncyclopediaHubPage extends StatelessWidget {
   const EncyclopediaHubPage({super.key});
+  @override
+  Widget build(BuildContext context) {
+    // Tab labels are Arabic literals: app_state.dart (localisation) is
+    // outside this fix's scope, and the book itself is Arabic.
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(trc(context, 'nav_encyclopedia')),
+          bottom: const TabBar(
+            labelStyle: TextStyle(fontSize: 12.5),
+            tabs: [
+              Tab(text: 'كتاب البروتوكول والمراسم'),
+              Tab(text: 'دليل مراسيم والدول'),
+            ],
+          ),
+        ),
+        body: const TabBarView(
+          children: [
+            BookEncyclopediaView(),
+            _LegacyEncyclopediaHub(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// The pre-existing hub list (search, protocol guide, countries,
+/// references), now the second tab — unchanged behaviour.
+class _LegacyEncyclopediaHub extends StatelessWidget {
+  const _LegacyEncyclopediaHub();
   @override
   Widget build(BuildContext context) {
     final items = [
@@ -101,38 +137,35 @@ class EncyclopediaHubPage extends StatelessWidget {
         const LibraryPage(),
       ),
     ];
-    return Scaffold(
-      appBar: AppBar(title: Text(trc(context, 'nav_encyclopedia'))),
-      body: ListView(
-        padding: const EdgeInsets.all(12),
-        children: [
-          Card(
-            child: ListTile(
-              leading: const Icon(Icons.search, color: AppColors.gold),
-              title: Text(trc(context, 'search_hint')),
-              trailing: const Icon(Icons.arrow_back_ios, size: 14),
-              onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => const SearchPage())),
-            ),
+    return ListView(
+      padding: const EdgeInsets.all(12),
+      children: [
+        Card(
+          child: ListTile(
+            leading: const Icon(Icons.search, color: AppColors.gold),
+            title: Text(trc(context, 'search_hint')),
+            trailing: const Icon(Icons.arrow_back_ios, size: 14),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (_) => const SearchPage())),
           ),
-          const SizedBox(height: 8),
-          ...items.map((it) => Card(
-                margin: const EdgeInsets.only(bottom: 8),
-                child: ListTile(
-                  leading: CircleAvatar(
-                    backgroundColor: AppColors.navy,
-                    child: Icon(it.$1, color: AppColors.gold, size: 22),
-                  ),
-                  title: Text(it.$2,
-                      style: const TextStyle(fontWeight: FontWeight.bold)),
-                  subtitle: Text(it.$3),
-                  trailing: const Icon(Icons.arrow_back_ios, size: 14),
-                  onTap: () => Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => it.$4)),
+        ),
+        const SizedBox(height: 8),
+        ...items.map((it) => Card(
+              margin: const EdgeInsets.only(bottom: 8),
+              child: ListTile(
+                leading: CircleAvatar(
+                  backgroundColor: AppColors.navy,
+                  child: Icon(it.$1, color: AppColors.gold, size: 22),
                 ),
-              )),
-        ],
-      ),
+                title: Text(it.$2,
+                    style: const TextStyle(fontWeight: FontWeight.bold)),
+                subtitle: Text(it.$3),
+                trailing: const Icon(Icons.arrow_back_ios, size: 14),
+                onTap: () => Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => it.$4)),
+              ),
+            )),
+      ],
     );
   }
 }
