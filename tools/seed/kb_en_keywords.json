@@ -1,0 +1,582 @@
+{
+  "_derivation": {
+    "cross_reference": "A term naming the contrasting topic of a comparison (e.g. 'court' on P1C2-M5, whose chapter arc contrasts contemporary ceremonies with the court protocol of P1C2-M3/M4) is an index cross-reference only; it does not claim the topic's text covers that subject.",
+    "not_included": "No keyword invents a fact, article number, date, or page: numbers appear only where the topic title itself carries them (1815, 1961, 1991, article ranges of the Vienna appendices).",
+    "title_translation": "English rendering of the Arabic topic title (e.g. P2C2-M3 'مراسم الأعلام والنشيد والشعار الوطني' -> flag, anthem, emblem).",
+    "verified_sources": "Terms from the verified sources registry: VCDR 1961 article ranges for APP1-A/B/C (Arts. 1-12 / 13-33 / 34-53), sovereign equality / UN Charter for P2C3-M1 and P2C1-M2-05, League of Arab States for P2C1-M2-06."
+  },
+  "_doc": "English index vocabulary for the 54 knowledge-base topics (R1, 2026-11-25). Each list is a SEARCH INDEX only: title translations plus distinguishing concept terms and cross-reference terms drawn from the book's own chapter structure (BOOK_INDEX.md) and from verified international sources already in the sources registry (Vienna Convention on Diplomatic Relations 1961, UN Charter, UN Manual of Protocol). These keywords are NOT book content and are NOT displayed as content: they only let English queries match the Arabic FTS index. Stored in kb_topics.en_keywords and folded into the indexed title text of kb_topics_fts by tools/build_db.py (the FTS schema itself is unchanged, so existing installs keep working through the content refresh). Coverage of all 54 topic ids is validated loudly by the builder.",
+  "keywords": {
+    "APP1-A": [
+      "vienna",
+      "convention",
+      "diplomatic",
+      "relations",
+      "1961",
+      "preamble",
+      "articles",
+      "article",
+      "definitions",
+      "definition",
+      "mission",
+      "establishment",
+      "functions",
+      "accreditation",
+      "text"
+    ],
+    "APP1-B": [
+      "vienna",
+      "convention",
+      "diplomatic",
+      "relations",
+      "1961",
+      "articles",
+      "article",
+      "classes",
+      "heads",
+      "mission",
+      "precedence",
+      "inviolability",
+      "premises",
+      "person",
+      "immunities",
+      "privileges",
+      "text"
+    ],
+    "APP1-C": [
+      "vienna",
+      "convention",
+      "diplomatic",
+      "relations",
+      "1961",
+      "articles",
+      "article",
+      "privileges",
+      "duties",
+      "termination",
+      "ratification",
+      "accession",
+      "final",
+      "provisions",
+      "text"
+    ],
+    "APP2": [
+      "yemen",
+      "yemeni",
+      "decree",
+      "law",
+      "1991",
+      "ceremonies",
+      "protocol",
+      "republican",
+      "legislation",
+      "text"
+    ],
+    "CONC": [
+      "conclusion",
+      "book",
+      "summary"
+    ],
+    "FM-01": [
+      "cover",
+      "dedication",
+      "foreword",
+      "introduction",
+      "book",
+      "protocol",
+      "ceremony",
+      "preface"
+    ],
+    "IDX": [
+      "index",
+      "footnotes",
+      "notes"
+    ],
+    "P1-X": [
+      "conclusion",
+      "summary",
+      "part"
+    ],
+    "P1C1-00": [
+      "introduction",
+      "ceremony",
+      "protocol",
+      "honours",
+      "tashrifat",
+      "definition",
+      "nature",
+      "chapter"
+    ],
+    "P1C1-M1": [
+      "definition",
+      "ceremony",
+      "ceremonies",
+      "meaning",
+      "origin",
+      "arabic"
+    ],
+    "P1C1-M2": [
+      "definition",
+      "protocol",
+      "international",
+      "relations",
+      "etiquette",
+      "social"
+    ],
+    "P1C1-M3": [
+      "definition",
+      "honours",
+      "tashrifat",
+      "honouring",
+      "honoring",
+      "reception",
+      "official",
+      "figures",
+      "purpose",
+      "respect"
+    ],
+    "P1C1-M4": [
+      "difference",
+      "differences",
+      "protocol",
+      "ceremony",
+      "honours",
+      "tashrifat",
+      "compare",
+      "comparison",
+      "example"
+    ],
+    "P1C1-X": [
+      "conclusion",
+      "summary",
+      "chapter"
+    ],
+    "P1C2-00": [
+      "introduction",
+      "history",
+      "historical",
+      "development",
+      "evolution",
+      "ceremony",
+      "protocol",
+      "chapter"
+    ],
+    "P1C2-M1": [
+      "roots",
+      "ancient",
+      "civilisations",
+      "civilizations",
+      "history",
+      "origin",
+      "origins"
+    ],
+    "P1C2-M2": [
+      "islamic",
+      "era",
+      "history",
+      "islam"
+    ],
+    "P1C2-M3": [
+      "middle",
+      "ages",
+      "medieval",
+      "royal",
+      "europe",
+      "court",
+      "courts",
+      "kings",
+      "palace"
+    ],
+    "P1C2-M4": [
+      "modern",
+      "diplomatic",
+      "protocol",
+      "institutionalisation",
+      "institutionalization",
+      "international",
+      "congress",
+      "vienna",
+      "1815",
+      "1961",
+      "history"
+    ],
+    "P1C2-M5": [
+      "contemporary",
+      "modern",
+      "ceremonies",
+      "image",
+      "management",
+      "reputation",
+      "public",
+      "traditional",
+      "court",
+      "protocol"
+    ],
+    "P1C2-X": [
+      "conclusion",
+      "summary",
+      "chapter"
+    ],
+    "P2-X": [
+      "conclusion",
+      "summary",
+      "part"
+    ],
+    "P2C1-00": [
+      "introduction",
+      "state",
+      "protocol",
+      "management",
+      "official",
+      "chapter"
+    ],
+    "P2C1-M1": [
+      "institutional",
+      "structure",
+      "organisation",
+      "organization",
+      "management",
+      "managing",
+      "manage",
+      "state",
+      "department",
+      "ministry",
+      "foreign",
+      "affairs",
+      "administration"
+    ],
+    "P2C1-M2-00": [
+      "arrangement",
+      "diplomatic",
+      "general",
+      "introduction",
+      "mechanism",
+      "order",
+      "organisational",
+      "organizational",
+      "personal",
+      "precedence",
+      "privilege",
+      "privileges",
+      "ranking",
+      "rules"
+    ],
+    "P2C1-M2-01": [
+      "precedence",
+      "state",
+      "domestic",
+      "internal",
+      "hierarchy",
+      "constitutional",
+      "offices",
+      "within"
+    ],
+    "P2C1-M2-02": [
+      "precedence",
+      "states",
+      "sovereign",
+      "equality",
+      "international",
+      "between"
+    ],
+    "P2C1-M2-03": [
+      "precedence",
+      "kings",
+      "king",
+      "heads",
+      "state",
+      "monarchs",
+      "royal",
+      "sovereigns"
+    ],
+    "P2C1-M2-04": [
+      "precedence",
+      "diplomatic",
+      "consular",
+      "missions",
+      "mission",
+      "heads",
+      "ambassadors",
+      "credentials",
+      "date",
+      "seniority",
+      "assumption",
+      "office"
+    ],
+    "P2C1-M2-05": [
+      "precedence",
+      "united",
+      "nations",
+      "general",
+      "assembly",
+      "security",
+      "council",
+      "charter",
+      "rules"
+    ],
+    "P2C1-M2-06": [
+      "precedence",
+      "league",
+      "arab",
+      "states",
+      "summit",
+      "council",
+      "rules"
+    ],
+    "P2C1-M2-07": [
+      "precedence",
+      "official",
+      "occasions",
+      "occasion",
+      "events",
+      "event",
+      "guests",
+      "state",
+      "ceremony",
+      "rules"
+    ],
+    "P2C1-M2-08": [
+      "courtesy",
+      "precedence",
+      "guest",
+      "honour",
+      "honor",
+      "exception",
+      "rules"
+    ],
+    "P2C1-M2-09": [
+      "conflict",
+      "conflicting",
+      "precedence",
+      "criteria",
+      "criterion",
+      "seniority",
+      "office",
+      "nature",
+      "occasion",
+      "resolution",
+      "rules"
+    ],
+    "P2C1-M2-10": [
+      "summary",
+      "precedence",
+      "eight",
+      "aspects",
+      "rules"
+    ],
+    "P2C1-M3": [
+      "official",
+      "visits",
+      "visit",
+      "programme",
+      "program",
+      "strategy",
+      "strategies",
+      "plan",
+      "planning",
+      "organise",
+      "organize",
+      "organising",
+      "organizing",
+      "delegation",
+      "prime",
+      "minister"
+    ],
+    "P2C1-M4": [
+      "reception",
+      "receiving",
+      "arrival",
+      "airport",
+      "delegation",
+      "dignitaries",
+      "head",
+      "state",
+      "guest",
+      "honour",
+      "guard",
+      "welcome",
+      "ceremony"
+    ],
+    "P2C1-M4V": [
+      "reception",
+      "summary",
+      "visual",
+      "stages",
+      "arrival",
+      "airport",
+      "welcome",
+      "farewell",
+      "ceremony"
+    ],
+    "P2C1-M5": [
+      "farewell",
+      "farewelling",
+      "departure",
+      "airport",
+      "delegation",
+      "dignitaries",
+      "guest",
+      "reception",
+      "ceremony",
+      "difference"
+    ],
+    "P2C1-M6": [
+      "yemen",
+      "yemeni",
+      "republic",
+      "practice",
+      "law",
+      "decree",
+      "1991",
+      "protocol"
+    ],
+    "P2C1-X": [
+      "conclusion",
+      "summary",
+      "chapter"
+    ],
+    "P2C2-00": [
+      "introduction",
+      "practical",
+      "ceremonies",
+      "events",
+      "major",
+      "conferences",
+      "chapter"
+    ],
+    "P2C2-M1": [
+      "conference",
+      "conferences",
+      "international",
+      "meetings",
+      "meeting",
+      "organisation",
+      "organization",
+      "organise",
+      "organize",
+      "preparation",
+      "prepare",
+      "delegations",
+      "presidency",
+      "chair",
+      "seating",
+      "agenda",
+      "speeches"
+    ],
+    "P2C2-M2": [
+      "dinner",
+      "banquet",
+      "banquets",
+      "official",
+      "seating",
+      "guests",
+      "head",
+      "state",
+      "toasts",
+      "toast",
+      "reception"
+    ],
+    "P2C2-M3": [
+      "flag",
+      "flags",
+      "anthem",
+      "anthems",
+      "emblem",
+      "emblems",
+      "national",
+      "ceremonies",
+      "ceremony",
+      "half-mast",
+      "half",
+      "mast",
+      "mourning",
+      "respect"
+    ],
+    "P2C2-M4": [
+      "gifts",
+      "gift",
+      "presents",
+      "present",
+      "documentation",
+      "official",
+      "records",
+      "presentation"
+    ],
+    "P2C2-X": [
+      "conclusion",
+      "summary",
+      "chapter"
+    ],
+    "P2C3-00": [
+      "introduction",
+      "diplomatic",
+      "protocol",
+      "sovereign",
+      "international",
+      "occasions",
+      "chapter"
+    ],
+    "P2C3-M1": [
+      "diplomacy",
+      "diplomatic",
+      "ceremonies",
+      "protocol",
+      "international",
+      "principles",
+      "sovereign",
+      "equality",
+      "charter",
+      "united",
+      "nations"
+    ],
+    "P2C3-M2": [
+      "credentials",
+      "presentation",
+      "ambassador",
+      "ambassadors",
+      "head",
+      "state",
+      "stages",
+      "ceremony",
+      "letters",
+      "credence",
+      "presenting"
+    ],
+    "P2C3-M3": [
+      "signing",
+      "signature",
+      "agreements",
+      "agreement",
+      "treaties",
+      "treaty",
+      "protocol",
+      "sovereign",
+      "equality",
+      "ceremony"
+    ],
+    "P2C3-M4": [
+      "national",
+      "religious",
+      "celebrations",
+      "celebration",
+      "holidays",
+      "holiday",
+      "ceremony",
+      "diplomatic",
+      "corps"
+    ],
+    "P2C3-X": [
+      "conclusion",
+      "summary",
+      "chapter"
+    ],
+    "REF": [
+      "references",
+      "sources",
+      "bibliography",
+      "books",
+      "documents",
+      "quran"
+    ]
+  }
+}

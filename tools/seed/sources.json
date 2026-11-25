@@ -1,0 +1,379 @@
+{
+  "app": "PROTOCOL",
+  "categories": [
+    "قاعدة قانونية ملزمة",
+    "ممارسة دبلوماسية شائعة",
+    "عرف محلي",
+    "إرشاد تنظيمي",
+    "اجتهاد غير ملزم"
+  ],
+  "disclaimer": "Public published sources only. No affiliation with or official endorsement by the United Nations or any government is claimed.",
+  "document": "INTERNATIONAL_SOURCES",
+  "failed_opens": [
+    {
+      "action": "Not retried. Recorded as not directly verified; the verified fallback is the Manual of Protocol landing page (UN-MANUAL-OF-PROTOCOL), which lists the Arabic PDF link.",
+      "error": "browser.open failed: HTTP 403 — access denied",
+      "related_source": "UN-MANUAL-OF-PROTOCOL",
+      "url": "https://digitallibrary.un.org/record/3841030/files/Manual_of_Protocol_Arabic.pdf"
+    }
+  ],
+  "mansour_book_note": "The book 'Al-Protocol wal-Marasim' by Asaad Mansour has not been received; nothing is attributed to it in this file.",
+  "methodology": "Each URL was either opened directly with browser.open on 2026-11-25 or appeared verbatim in trusted browser.search results; verification_method is recorded per source. No URL was invented from training memory.",
+  "review_date": "2026-11-25",
+  "review_timezone": "Asia/Aden",
+  "sources": [
+    {
+      "category": "قاعدة قانونية ملزمة",
+      "dates": "Signed Vienna, 18 April 1961; entered into force 24 April 1964",
+      "id": "VCDR-1961-EN",
+      "name_ar": "اتفاقية فيينا للعلاقات الدبلوماسية، 1961",
+      "name_en": "Vienna Convention on Diplomatic Relations, 1961",
+      "publisher": "United Nations — International Law Commission; UN Treaty Series, vol. 500, p. 95",
+      "review_date": "2026-11-25",
+      "scope": "Establishment of diplomatic relations and functions of missions; accreditation and credentials; classes of heads of mission and precedence (Arts. 13-18); inviolability of mission premises, archives and correspondence; diplomatic privileges and immunities; tax and customs exemptions.",
+      "url": "http://legal.un.org/ilc/texts/instruments/english/conventions/9_1_1961.pdf",
+      "verification_method": "opened_directly",
+      "verification_status": "verified"
+    },
+    {
+      "category": "قاعدة قانونية ملزمة",
+      "dates": "Done at Vienna, 24 April 1963; entered into force 19 March 1967",
+      "id": "VCCR-1963-EN",
+      "name_ar": "اتفاقية فيينا للعلاقات القنصلية، 1963",
+      "name_en": "Vienna Convention on Consular Relations, 1963",
+      "publisher": "United Nations — International Law Commission; UN Treaty Series, vol. 596, p. 261",
+      "review_date": "2026-11-25",
+      "scope": "Establishment of consular relations; consular functions (Art. 5); classes of heads of consular posts; appointment and admission (exequatur); consular privileges and immunities; Art. 36 (communication with nationals); honorary consular officers.",
+      "url": "https://legal.un.org/ilc/texts/instruments/english/conventions/9_2_1963.pdf",
+      "verification_method": "opened_directly",
+      "verification_status": "verified"
+    },
+    {
+      "category": "قاعدة قانونية ملزمة",
+      "dates": "Signed San Francisco, 26 June 1945; entered into force 24 October 1945",
+      "id": "UN-CHARTER",
+      "name_ar": "ميثاق الأمم المتحدة",
+      "name_en": "Charter of the United Nations",
+      "publisher": "United Nations (un.org)",
+      "review_date": "2026-11-25",
+      "scope": "Purposes and principles of the UN (Arts. 1-2: sovereign equality, maintenance of peace and security); membership; principal organs; framework underlying the Vienna Conventions.",
+      "url_ar": "https://www.un.org/ar/about-us/un-charter/full-text",
+      "url_en": "https://www.un.org/en/about-us/un-charter/full-text",
+      "verification_method": "opened_directly",
+      "verification_status": "verified"
+    },
+    {
+      "category": "إرشاد تنظيمي",
+      "id": "UN-MANUAL-OF-PROTOCOL",
+      "name_ar": "دليل المراسم (دليل البروتوكول والاتصال)",
+      "name_en": "Manual of Protocol (UN Protocol and Liaison Service)",
+      "note": "The page itself lists PDF links in all six UN languages including Arabic; the direct PDF links were not individually opened in this review, and the Arabic PDF via the UN Digital Library returned HTTP 403 (see failed_opens).",
+      "publisher": "United Nations — Department for General Assembly and Conference Management (DGACM), Protocol and Liaison Service; ST/SG/4/Rev.9/1 (23 April 2021) per search results",
+      "review_date": "2026-11-25",
+      "scope": "Procedures for Permanent Missions and Observer Offices at UN Headquarters, New York: registration, letters of credentials, appointment of Permanent Representatives, grounds passes, privileges and immunities at HQ, official visits of dignitaries, flag-raising and official mourning, the Blue Book.",
+      "url": "https://www.un.org/dgacm/en/content/protocol/manual-of-protocol",
+      "verification_method": "opened_directly",
+      "verification_status": "verified"
+    },
+    {
+      "category": "إرشاد تنظيمي",
+      "id": "US-STATE-PROTOCOL-REFERENCE",
+      "name_ar": "المرجع البروتوكولي لمكتب رئيس المراسم (وزارة الخارجية الأمريكية)",
+      "name_en": "Protocol Reference — Office of the Chief of Protocol, U.S. Department of State",
+      "publisher": "U.S. Department of State — Office of the Chief of Protocol",
+      "review_date": "2026-11-25",
+      "scope": "U.S. protocol practice: forms of address and courtesy titles, receiving lines, religious sensitivities, invitations/menus/place cards, seating at working and social events, order of flags and national anthems, visits of foreign leaders to Washington.",
+      "url": "https://www.state.gov/protocol-reference/",
+      "verification_method": "opened_directly",
+      "verification_status": "verified"
+    },
+    {
+      "category": "إرشاد تنظيمي",
+      "id": "US-FAM-2-310",
+      "name_ar": "دليل الشؤون الخارجية الأمريكي — البروتوكول والأسبقية والمراسم (2 FAM 310)",
+      "name_en": "Foreign Affairs Manual, 2 FAM 300 — Protocol, Precedence and Formalities; 2 FAM 310 Objectives and Contents",
+      "publisher": "U.S. Department of State — Foreign Affairs Manual (fam.state.gov); office of origin S/CPR",
+      "review_date": "2026-11-25",
+      "scope": "Official guidance for U.S. Foreign Service officers on protocol, precedence and formalities; official protocol relations with foreign governments (2 FAM 340); preparing diplomatic notes (5 FAH-1 H-620).",
+      "url": "https://fam.state.gov/fam/02fam/02fam0310.html",
+      "verification_method": "opened_directly",
+      "verification_status": "verified"
+    },
+    {
+      "category": "اجتهاد غير ملزم",
+      "edition": "8th edition, 2023, 752 pages, ISBN 9780192859594 (also 6th ed. 2009; 7th ed. 2017, ISBN 9780198739104)",
+      "id": "SATOW-8TH-ED-2023",
+      "name_ar": "الممارسة الدبلوماسية لساتو",
+      "name_en": "Satow's Diplomatic Practice",
+      "note": "Verified via multiple consistent Google Books search results (publisher, editor, year, ISBN, page count). The publisher's own page was not opened directly in this review.",
+      "publisher": "Oxford University Press; original author Sir Ernest Mason Satow; editor Sir Ivor Roberts",
+      "review_date": "2026-11-25",
+      "scope": "Standard academic/professional reference on diplomatic practice: history of diplomacy, diplomatic relations, privileges and immunities, diplomatic missions, consular matters, treaties and conferences, multilateral diplomacy.",
+      "url": "https://www.google.gg/books/edition/_/MhjQEAAAQBAJ",
+      "verification_method": "search_result",
+      "verification_status": "verified"
+    },
+    {
+      "category": "اجتهاد غير ملزم",
+      "edition": "7th edition, 1998",
+      "id": "FELTHAM-DIPLOMATIC-HANDBOOK-7TH",
+      "name_ar": "الدليل الدبلوماسي لفلثام",
+      "name_en": "Diplomatic Handbook — R. G. Feltham",
+      "note": "Verified via archive.org search results showing the full text and contents. Not opened directly in this review.",
+      "publisher": "Addison Wesley Longman; author R. G. Feltham",
+      "review_date": "2026-11-25",
+      "scope": "Practical handbook for diplomats: diplomatic relations, the ministry of foreign affairs, the diplomatic mission, protocol and procedure (precedence of heads of mission by date of presenting credentials, the Diplomatic List, correspondence), conferences.",
+      "url": "https://archive.org/stream/felthamr.g.diplomatichandbook/Feltham%20R.G.%20-%20Diplomatic%20handbook%20_djvu.txt",
+      "verification_method": "search_result",
+      "verification_status": "verified"
+    },
+    {
+      "category": "إرشاد تنظيمي",
+      "id": "FCDO-PROTOCOL-GUIDE",
+      "name_ar": "دليل بروتوكول منشور لوزارة الخارجية البريطانية (FCDO)",
+      "name_en": "Published FCDO Protocol Directorate protocol guide",
+      "note": "The existence of the Protocol Directorate was confirmed from an official GOV.UK page opened directly (FCDO privacy notice for foreign diplomatic and consular staff, https://www.gov.uk/government/publications/fcdo-privacy-notice-foreign-diplomatic-staff-in-the-uk/fcdo-privacy-notice-foreign-diplomatic-and-consular-staff-in-the-uk), which states the Diplomatic Missions and International Organisations / Ceremonial Unit is responsible for protocol and ceremonial matters. No published protocol guide (PDF or guidance page) from FCDO was found. A 2013 FCDO blog post on protocol is an opinion piece by a former official, not an official published guide, and is not relied on.",
+      "publisher": "UK Foreign, Commonwealth & Development Office (FCDO) — Protocol Directorate",
+      "review_date": "2026-11-25",
+      "scope": "Would cover UK protocol practice for diplomatic missions in London, if a published guide existed.",
+      "url": null,
+      "verification_method": "not_found",
+      "verification_status": "unverified"
+    },
+    {
+      "category": "قاعدة قانونية ملزمة",
+      "id": "VCDR-1961-AR-UN",
+      "name_ar": "النص العربي الرسمي لاتفاقية فيينا للعلاقات الدبلوماسية 1961 على موقع الأمم المتحدة",
+      "name_en": "Official Arabic text of the Vienna Convention on Diplomatic Relations 1961 on a UN site",
+      "note": "The official English text is verified (VCDR-1961-EN). The ILC page on legal.un.org offers language options including Arabic, but no working direct Arabic URL was extracted in this review. Complete Arabic texts exist on non-official sites (e.g. aajeg.com, lawsociety.ly, a university PDF) and are NOT listed here as official sources. Arabic is not one of the five authentic languages of the Convention (Chinese, English, French, Russian, Spanish).",
+      "publisher": "United Nations (sought)",
+      "review_date": "2026-11-25",
+      "scope": "Arabic version of the VCDR, if an official UN Arabic text were located.",
+      "url": null,
+      "verification_method": "not_found",
+      "verification_status": "unverified"
+    },
+    {
+      "category": "قاعدة قانونية ملزمة",
+      "id": "VCCR-1963-AR-UN",
+      "name_ar": "النص العربي الرسمي لاتفاقية فيينا للعلاقات القنصلية 1963 على موقع الأمم المتحدة",
+      "name_en": "Official Arabic text of the Vienna Convention on Consular Relations 1963 on a UN site",
+      "note": "The official English text is verified (VCCR-1963-EN). No official Arabic text on a UN site was found in search. Same authentic-languages note as VCDR-1961-AR-UN.",
+      "publisher": "United Nations (sought)",
+      "review_date": "2026-11-25",
+      "scope": "Arabic version of the VCCR, if an official UN Arabic text were located.",
+      "url": null,
+      "verification_method": "not_found",
+      "verification_status": "unverified"
+    }
+  ],
+  "summary": {
+    "failed_opens": 1,
+    "unverified": 3,
+    "verified": 8
+  },
+  "axis_coverage": {
+    "note": "تغطية محاور كتاب البروتوكول والمراسم السبعة (BOOK_OUTLINE.md) بالمصادر المتحققة في هذا السجل. الكتاب الكامل لم يصل بعد.",
+    "review_date": "2026-11-25",
+    "axes": [
+      {
+        "axis": 1,
+        "title_ar": "المفاهيم الأساسية",
+        "source_ids": [
+          "SATOW-8TH-ED-2023",
+          "FELTHAM-DIPLOMATIC-HANDBOOK-7TH"
+        ],
+        "status": "partially_covered",
+        "gap": "لا مصدر رسمي دولي يعرّف الفروق بين البروتوكول والمراسم والإتيكيت"
+      },
+      {
+        "axis": 2,
+        "title_ar": "نبذة تاريخية مختصرة",
+        "source_ids": [
+          "VCDR-1961-EN",
+          "VCCR-1963-EN",
+          "UN-CHARTER",
+          "SATOW-8TH-ED-2023"
+        ],
+        "status": "partially_covered",
+        "gap": "السرد التاريخي (الحضارات القديمة والعصر الإسلامي) بلا مصدر دولي موثق محدد"
+      },
+      {
+        "axis": 3,
+        "title_ar": "قواعد الأسبقية ومعاييرها",
+        "source_ids": [
+          "VCDR-1961-EN",
+          "US-FAM-2-310",
+          "UN-MANUAL-OF-PROTOCOL"
+        ],
+        "status": "covered",
+        "gap": null
+      },
+      {
+        "axis": 4,
+        "title_ar": "الزيارات الرسمية",
+        "source_ids": [
+          "UN-MANUAL-OF-PROTOCOL",
+          "US-STATE-PROTOCOL-REFERENCE"
+        ],
+        "status": "covered",
+        "gap": null
+      },
+      {
+        "axis": 5,
+        "title_ar": "مراسم الأعلام والرموز السيادية",
+        "source_ids": [
+          "UN-MANUAL-OF-PROTOCOL",
+          "US-STATE-PROTOCOL-REFERENCE"
+        ],
+        "status": "covered",
+        "gap": null
+      },
+      {
+        "axis": 6,
+        "title_ar": "قواعد الجلوس",
+        "source_ids": [
+          "UN-MANUAL-OF-PROTOCOL",
+          "US-STATE-PROTOCOL-REFERENCE",
+          "SATOW-8TH-ED-2023"
+        ],
+        "status": "partially_covered",
+        "gap": "الجلوس في السيارات والندوات الجامعية بلا مصدر محدد متحقق"
+      },
+      {
+        "axis": 7,
+        "title_ar": "الإتيكيت",
+        "source_ids": [
+          "US-STATE-PROTOCOL-REFERENCE",
+          "SATOW-8TH-ED-2023",
+          "FELTHAM-DIPLOMATIC-HANDBOOK-7TH"
+        ],
+        "status": "partially_covered",
+        "gap": "الإتيكيت الرقمي الحديث: بلا مصدر دولي موثق — غير مغطى"
+      }
+    ],
+    "summary": {
+      "covered": 3,
+      "partially_covered": 4,
+      "uncovered_parts": [
+        "الإتيكيت الرقمي الحديث"
+      ]
+    }
+  },
+  "index_coverage": {
+    "note": "تغطية مباحث الفهرس العملية (BOOK_INDEX.md) بالمصادر المتحققة في هذا السجل. نص الكتاب الكامل لم يصل بعد.",
+    "review_date": "2026-11-25",
+    "sections": [
+      {
+        "section": "ب2 ف1 — م2: الأسبقية في الأمم المتحدة",
+        "source_ids": [
+          "VCDR-1961-EN",
+          "UN-MANUAL-OF-PROTOCOL"
+        ],
+        "status": "covered",
+        "gap": null
+      },
+      {
+        "section": "ب2 ف1 — م2: الأسبقية في جامعة الدول العربية",
+        "source_ids": [],
+        "status": "uncovered",
+        "gap": "لا مصدر منشور متحقق عن بروتوكول جامعة الدول العربية"
+      },
+      {
+        "section": "ب2 ف1 — م2: أسبقية المجاملة",
+        "source_ids": [],
+        "status": "uncovered",
+        "gap": "لا مصدر دولي موثق محدد"
+      },
+      {
+        "section": "ب2 ف1 — م2: تعارض معايير الأسبقية",
+        "source_ids": [],
+        "status": "uncovered",
+        "gap": "لا مصدر دولي موثق محدد"
+      },
+      {
+        "section": "ب2 ف1 — م3/م4/م5: الزيارات واستقبال وتوديع كبار الشخصيات",
+        "source_ids": [
+          "UN-MANUAL-OF-PROTOCOL",
+          "US-STATE-PROTOCOL-REFERENCE"
+        ],
+        "status": "covered",
+        "gap": null
+      },
+      {
+        "section": "ب2 ف1 — م6: آلية المراسم في الجمهورية اليمنية",
+        "source_ids": [],
+        "status": "book_only",
+        "gap": "مصدره الكتاب نفسه عند وصوله؛ لا يُستبدل بمصدر آخر دون وسمه"
+      },
+      {
+        "section": "ب2 ف2 — م1: بروتوكول المؤتمرات والاجتماعات الدولية",
+        "source_ids": [
+          "UN-MANUAL-OF-PROTOCOL",
+          "SATOW-8TH-ED-2023",
+          "FELTHAM-DIPLOMATIC-HANDBOOK-7TH"
+        ],
+        "status": "covered",
+        "gap": null
+      },
+      {
+        "section": "ب2 ف2 — م2: حفلات العشاء والمآدب الرسمية",
+        "source_ids": [
+          "US-STATE-PROTOCOL-REFERENCE",
+          "SATOW-8TH-ED-2023"
+        ],
+        "status": "covered",
+        "gap": null
+      },
+      {
+        "section": "ب2 ف2 — م3: مراسم الأعلام والنشيد والشعار الوطني",
+        "source_ids": [
+          "UN-MANUAL-OF-PROTOCOL",
+          "US-STATE-PROTOCOL-REFERENCE"
+        ],
+        "status": "covered",
+        "gap": null
+      },
+      {
+        "section": "ب2 ف2 — م4: مراسم تقديم الهدايا والتوثيق الرسمي",
+        "source_ids": [
+          "SATOW-8TH-ED-2023",
+          "FELTHAM-DIPLOMATIC-HANDBOOK-7TH"
+        ],
+        "status": "partially_covered",
+        "gap": "الهدايا بلا مصدر محدد متحقق"
+      },
+      {
+        "section": "ب2 ف3 — م2: مراسم تقديم أوراق اعتماد السفراء",
+        "source_ids": [
+          "VCDR-1961-EN",
+          "UN-MANUAL-OF-PROTOCOL"
+        ],
+        "status": "covered",
+        "gap": null
+      },
+      {
+        "section": "ب2 ف3 — م3: بروتوكول توقيع الاتفاقيات والمعاهدات",
+        "source_ids": [
+          "UN-MANUAL-OF-PROTOCOL"
+        ],
+        "status": "partially_covered",
+        "gap": "رابط محدد متحقق لاتفاقية فيينا لقانون المعاهدات 1969 غير موجود"
+      },
+      {
+        "section": "ب2 ف3 — م4: البروتوكول في الاحتفالات الوطنية والدينية",
+        "source_ids": [
+          "US-STATE-PROTOCOL-REFERENCE"
+        ],
+        "status": "partially_covered",
+        "gap": "الاحتفالات الوطنية بلا مصدر دولي موحد"
+      }
+    ],
+    "summary": {
+      "covered": 7,
+      "partially_covered": 3,
+      "uncovered": 3,
+      "book_only": 1
+    }
+  }
+}

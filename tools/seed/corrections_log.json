@@ -1,0 +1,462 @@
+{
+  "total_applications": 1310,
+  "rules_applied": 115,
+  "by_rule": [
+    {
+      "rule": "فراغ داخل الكلمة: حرف منفصل ← ملتصق بكلمته",
+      "count": 163,
+      "example_replacement": "ملتصق بكلمته"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … ية ← …ية",
+      "count": 137,
+      "example_replacement": "…ية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: ال منفصلة ← ملتصقة",
+      "count": 61,
+      "example_replacement": "ملتصقة"
+    },
+    {
+      "rule": "ترقيم مواد: مادة ()N ← المادة N",
+      "count": 61,
+      "example_replacement": "المادة N"
+    },
+    {
+      "rule": "تبديل حرفين: األ ← الأ",
+      "count": 53,
+      "example_replacement": "الأ"
+    },
+    {
+      "rule": "حرف زائد: اال ← ال (بداية الكلمة)",
+      "count": 52,
+      "example_replacement": "ال (بداية الكلمة)"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: التشر يفات ← التشريفات",
+      "count": 50,
+      "example_replacement": "التشريفات"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: الز يارات ← الزيارات",
+      "count": 45,
+      "example_replacement": "الزيارات"
+    },
+    {
+      "rule": "تبديل حرفين: املبحث ← المبحث",
+      "count": 42,
+      "example_replacement": "المبحث"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: العسكر ية ← العسكرية",
+      "count": 41,
+      "example_replacement": "العسكرية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: الز يارة ← الزيارة",
+      "count": 37,
+      "example_replacement": "الزيارة"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: الجمهور ية ← الجمهورية",
+      "count": 32,
+      "example_replacement": "الجمهورية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: توز يع ← توزيع",
+      "count": 24,
+      "example_replacement": "توزيع"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … ة ← …ة",
+      "count": 24,
+      "example_replacement": "…ة"
+    },
+    {
+      "rule": "تبديل حرفين: املراسم ← المراسم",
+      "count": 23,
+      "example_replacement": "المراسم"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: الإدار ية ← الإدارية",
+      "count": 23,
+      "example_replacement": "الإدارية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: ال كبرى ← الكبرى",
+      "count": 23,
+      "example_replacement": "الكبرى"
+    },
+    {
+      "rule": "تبديل حرفين: األول ← الأول",
+      "count": 22,
+      "example_replacement": "الأول"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: الهو ية ← الهوية",
+      "count": 20,
+      "example_replacement": "الهوية"
+    },
+    {
+      "rule": "تبديل حرفين: يف ← في",
+      "count": 19,
+      "example_replacement": "في"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: … يل+لاحقة ← …يل+لاحقة",
+      "count": 17,
+      "example_replacement": "…يل+لاحقة"
+    },
+    {
+      "rule": "تبديل حرفين: الربوتوكول ← البروتوكول",
+      "count": 16,
+      "example_replacement": "البروتوكول"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: المل كية ← الملكية",
+      "count": 16,
+      "example_replacement": "الملكية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … يل ← …يل",
+      "count": 15,
+      "example_replacement": "…يل"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: للز يارة ← للزيارة",
+      "count": 14,
+      "example_replacement": "للزيارة"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: والتوز يع ← والتوزيع",
+      "count": 13,
+      "example_replacement": "والتوزيع"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: ز يارة ← زيارة",
+      "count": 12,
+      "example_replacement": "زيارة"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: البصر ية ← البصرية",
+      "count": 11,
+      "example_replacement": "البصرية"
+    },
+    {
+      "rule": "تبديل حرفين: الرمسي ← الرسمي",
+      "count": 11,
+      "example_replacement": "الرسمي"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … يخي ← …يخي",
+      "count": 10,
+      "example_replacement": "…يخي"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … يقة ← …يقة",
+      "count": 10,
+      "example_replacement": "…يقة"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: التار يخية ← التاريخية",
+      "count": 9,
+      "example_replacement": "التاريخية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: الدستور ية ← الدستورية",
+      "count": 9,
+      "example_replacement": "الدستورية"
+    },
+    {
+      "rule": "ترقيم مواد: المادة (.)N ← المادة N",
+      "count": 9,
+      "example_replacement": "المادة N"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: أولو ية ← أولوية",
+      "count": 8,
+      "example_replacement": "أولوية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … كة ← …كة",
+      "count": 7,
+      "example_replacement": "…كة"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … يين ← …يين",
+      "count": 7,
+      "example_replacement": "…يين"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … يق ← …يق",
+      "count": 7,
+      "example_replacement": "…يق"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: الجاهز ية ← الجاهزية",
+      "count": 7,
+      "example_replacement": "الجاهزية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: الإ يجاب ← الإيجاب",
+      "count": 7,
+      "example_replacement": "الإيجاب"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: إ يجاب ← إيجاب",
+      "count": 6,
+      "example_replacement": "إيجاب"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: الإنجليز ية ← الإنجليزية",
+      "count": 6,
+      "example_replacement": "الإنجليزية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: جمهور ية ← جمهورية",
+      "count": 6,
+      "example_replacement": "جمهورية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: فر يق ← فريق",
+      "count": 6,
+      "example_replacement": "فريق"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … ات ← …ات",
+      "count": 6,
+      "example_replacement": "…ات"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: تعر يف ← تعريف",
+      "count": 5,
+      "example_replacement": "تعريف"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: تار يخية ← تاريخية",
+      "count": 5,
+      "example_replacement": "تاريخية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: مستو يات ← مستويات",
+      "count": 5,
+      "example_replacement": "مستويات"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: للجمهور ية ← للجمهورية",
+      "count": 5,
+      "example_replacement": "للجمهورية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … يع ← …يع",
+      "count": 5,
+      "example_replacement": "…يع"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: التشر يفية ← التشريفية",
+      "count": 4,
+      "example_replacement": "التشريفية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … يفات ← …يفات",
+      "count": 4,
+      "example_replacement": "…يفات"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: التعر يف ← التعريف",
+      "count": 4,
+      "example_replacement": "التعريف"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: للز يارات ← للزيارات",
+      "count": 4,
+      "example_replacement": "للزيارات"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: ز يارات ← زيارات",
+      "count": 4,
+      "example_replacement": "زيارات"
+    },
+    {
+      "rule": "تبديل حرفين: خالل ← خلال",
+      "count": 4,
+      "example_replacement": "خلال"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: الفور ية ← الفورية",
+      "count": 4,
+      "example_replacement": "الفورية"
+    },
+    {
+      "rule": "تبديل حرفين: برتوكول ← بروتوكول",
+      "count": 4,
+      "example_replacement": "بروتوكول"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … بية ← …بية",
+      "count": 4,
+      "example_replacement": "…بية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … بي ← …بي",
+      "count": 4,
+      "example_replacement": "…بي"
+    },
+    {
+      "rule": "تبديل حرفين: التارخيية ← التاريخية",
+      "count": 3,
+      "example_replacement": "التاريخية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: اللغو ية ← اللغوية",
+      "count": 3,
+      "example_replacement": "اللغوية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: التوز يع ← التوزيع",
+      "count": 3,
+      "example_replacement": "التوزيع"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: الف كر ← الفكر",
+      "count": 3,
+      "example_replacement": "الفكر"
+    },
+    {
+      "rule": "تبديل حرفين: التارخيي ← التاريخي",
+      "count": 2,
+      "example_replacement": "التاريخي"
+    },
+    {
+      "rule": "تبديل حرفين: احلضارات ← الحضارات",
+      "count": 2,
+      "example_replacement": "الحضارات"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: البابو ية ← البابوية",
+      "count": 2,
+      "example_replacement": "البابوية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … يز ← …يز",
+      "count": 2,
+      "example_replacement": "…يز"
+    },
+    {
+      "rule": "تبديل حرفين: املناسبات ← المناسبات",
+      "count": 2,
+      "example_replacement": "المناسبات"
+    },
+    {
+      "rule": "تبديل حرفين: األمري ← الأمري",
+      "count": 2,
+      "example_replacement": "الأمري"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … يون ← …يون",
+      "count": 2,
+      "example_replacement": "…يون"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: التشر يفي ← التشريفي",
+      "count": 2,
+      "example_replacement": "التشريفي"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … يحة ← …يحة",
+      "count": 2,
+      "example_replacement": "…يحة"
+    },
+    {
+      "rule": "تبديل حرفين: حممد ← محمد",
+      "count": 1,
+      "example_replacement": "محمد"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (ثلاثي): م ح مد ← محمد",
+      "count": 1,
+      "example_replacement": "محمد"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … يلة ← …يلة",
+      "count": 1,
+      "example_replacement": "…يلة"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: للتشر يفات ← للتشريفات",
+      "count": 1,
+      "example_replacement": "للتشريفات"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: السل كية ← السلكية",
+      "count": 1,
+      "example_replacement": "السلكية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: واللاسل كية ← واللاسلكية",
+      "count": 1,
+      "example_replacement": "واللاسلكية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: البابو يون ← البابويون",
+      "count": 1,
+      "example_replacement": "البابويون"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … يادة ← …يادة",
+      "count": 1,
+      "example_replacement": "…يادة"
+    },
+    {
+      "rule": "تبديل حرفين: املمارسات ← الممارسات",
+      "count": 1,
+      "example_replacement": "الممارسات"
+    },
+    {
+      "rule": "تبديل حرفين: األحداث ← الأحداث",
+      "count": 1,
+      "example_replacement": "الأحداث"
+    },
+    {
+      "rule": "تبديل حرفين: الكربى ← الكبرى",
+      "count": 1,
+      "example_replacement": "الكبرى"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: السر يع ← السريع",
+      "count": 1,
+      "example_replacement": "السريع"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: البهو ية ← البهوية",
+      "count": 1,
+      "example_replacement": "البهوية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة: العسكر يين ← العسكريين",
+      "count": 1,
+      "example_replacement": "العسكريين"
+    },
+    {
+      "rule": "ترقيم فقرات: الفقرة ( )N ← الفقرة N",
+      "count": 1,
+      "example_replacement": "الفقرة N"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … كية ← …كية",
+      "count": 1,
+      "example_replacement": "…كية"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (عام): … ى ← …ى",
+      "count": 1,
+      "example_replacement": "…ى"
+    },
+    {
+      "rule": "فراغ داخل الكلمة (ثلاثي): … ي ع ← …يع",
+      "count": 1,
+      "example_replacement": "…يع"
+    }
+  ],
+  "residual_garble_by_topic": []
+}
