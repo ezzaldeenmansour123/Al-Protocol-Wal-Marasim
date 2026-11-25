@@ -1,3 +1,4 @@
+// ignore_for_file: avoid_print
 // اختبار حارس منع الاختلاق (lib/ai/refusal_guard.dart).
 //
 // سكربت Dart مستقل: main() مع asserts فقط، بلا flutter_test، حتى
@@ -7,8 +8,8 @@
 // يغطي: قاعدة نطاق مواد فيينا (1–53) عربياً وإنجليزياً، عتبة الصلة،
 // ونص الرفض الحرفي. لا قاعدة بيانات ولا شبكة.
 
-import '../lib/ai/refusal_guard.dart';
-import '../lib/ai/retrieval_core.dart';
+import 'package:protocol_marasim/ai/refusal_guard.dart';
+import 'package:protocol_marasim/ai/retrieval_core.dart';
 
 int _passed = 0;
 

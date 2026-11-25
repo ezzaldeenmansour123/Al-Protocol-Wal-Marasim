@@ -1,3 +1,4 @@
+// ignore_for_file: avoid_print
 // اختبار منطق اختيار المزود (lib/ai/provider_selector.dart).
 //
 // سكربت Dart مستقل: main() مع asserts فقط، بلا flutter_test، حتى
@@ -8,8 +9,8 @@
 // وفي كل حالة أخرى يعود المساعد إلى الوضع الاسترجاعي مع وسم صادق.
 // لا قاعدة بيانات ولا شبكة ولا نموذج.
 
-import '../lib/ai/model_catalog.dart';
-import '../lib/ai/provider_selector.dart';
+import 'package:protocol_marasim/ai/model_catalog.dart';
+import 'package:protocol_marasim/ai/provider_selector.dart';
 
 int _passed = 0;
 

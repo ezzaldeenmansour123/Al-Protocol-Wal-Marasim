@@ -1,3 +1,4 @@
+// ignore_for_file: avoid_print
 // اختبار كتالوج النماذج المحلية (lib/ai/model_catalog.dart).
 //
 // سكربت Dart مستقل: main() مع asserts فقط، بلا flutter_test، حتى
@@ -8,7 +9,7 @@
 // Face)، روابط التنزيل، تنسيق الأحجام، وحساب المساحة المطلوبة.
 // لا شبكة: الروابط تُبنى وتُقارن نصاً فقط — لا يُنزَّل أي ملف.
 
-import '../lib/ai/model_catalog.dart';
+import 'package:protocol_marasim/ai/model_catalog.dart';
 
 int _passed = 0;
 

@@ -1,3 +1,4 @@
+// ignore_for_file: avoid_print
 // اختبار موجهات التوليد المقيّد بالاسترجاع (lib/ai/prompts.dart).
 //
 // سكربت Dart مستقل: main() مع asserts فقط، بلا flutter_test، حتى
@@ -9,9 +10,9 @@
 // المستخدم مع سياق المحادثة، وقرار الرفض قبل التوليد (جملة الرفض
 // حرفياً دون استدعاء النموذج). لا قاعدة بيانات ولا شبكة ولا نموذج.
 
-import '../lib/ai/answer_style.dart';
-import '../lib/ai/prompts.dart';
-import '../lib/ai/retrieval_core.dart';
+import 'package:protocol_marasim/ai/answer_style.dart';
+import 'package:protocol_marasim/ai/prompts.dart';
+import 'package:protocol_marasim/ai/retrieval_core.dart';
 
 int _passed = 0;
 

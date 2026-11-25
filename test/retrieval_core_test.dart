@@ -1,3 +1,4 @@
+// ignore_for_file: avoid_print
 // اختبار طبقة الاسترجاع المحلية (lib/ai/retrieval_core.dart).
 //
 // سكربت Dart مستقل: main() مع asserts فقط، بلا flutter_test، حتى
@@ -7,7 +8,7 @@
 // يطبع تعبيرات FTS5 المولَّدة حتى يمكن التحقق منها مقابل قاعدة
 // اختبار SQLite (انظر docs/RAG_PHASE2.md).
 
-import '../lib/ai/retrieval_core.dart';
+import 'package:protocol_marasim/ai/retrieval_core.dart';
 
 int _passed = 0;
 
