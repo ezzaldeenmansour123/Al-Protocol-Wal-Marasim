@@ -50,10 +50,9 @@ class _SavedConversationsPageState extends State<SavedConversationsPage> {
     try {
       await Repo.i.deleteChatConversation(c['id'] as int);
     } catch (_) {
-      if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(trc(context, 'chat_delete_fail'))));
-      }
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(trc(context, 'chat_delete_fail'))));
       return;
     }
     _load();

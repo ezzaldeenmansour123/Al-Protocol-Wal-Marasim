@@ -735,7 +735,7 @@ class _LessonPageState extends State<LessonPage> {
                         ),
                       ),
                       const SizedBox(height: 14),
-                      SectionHeader(title: 'موضوع قاعدة المعرفة المرتبط'),
+                      const SectionHeader(title: 'موضوع قاعدة المعرفة المرتبط'),
                       const SizedBox(height: 6),
                       Card(
                         child: Padding(
@@ -785,7 +785,7 @@ class _LessonPageState extends State<LessonPage> {
                       _kbListSection('نقاط أساسية — من قاعدة المعرفة',
                           topic.keyPointsJson),
                       if (_supporting.isNotEmpty) ...[
-                        SectionHeader(title: 'مواضيع داعمة من قاعدة المعرفة'),
+                        const SectionHeader(title: 'مواضيع داعمة من قاعدة المعرفة'),
                         const SizedBox(height: 4),
                         ..._supporting.map((t) => Card(
                               margin: const EdgeInsets.only(bottom: 6),
@@ -1003,26 +1003,34 @@ class _QuizPageState extends State<QuizPage> {
               style: const TextStyle(
                   fontSize: 16, height: 1.9, fontWeight: FontWeight.bold)),
           const SizedBox(height: 12),
-          ...List.generate(q.options.length, (i) {
-            final isCorrectOption = _checked && i == q.correctIndex;
-            final isWrongPick = _checked && i == _selected && wrong;
-            return Card(
-              color: isCorrectOption
-                  ? Colors.green.withValues(alpha: 0.12)
-                  : isWrongPick
-                      ? Colors.red.withValues(alpha: 0.10)
-                      : null,
-              margin: const EdgeInsets.only(bottom: 6),
-              child: RadioListTile<int>(
-                value: i,
-                groupValue: _selected,
-                onChanged: _checked
-                    ? null
-                    : (v) => setState(() => _selected = v ?? -1),
-                title: Text(q.options[i], style: const TextStyle(height: 1.7)),
-              ),
-            );
-          }),
+          RadioGroup<int>(
+            groupValue: _selected,
+            onChanged: _checked
+                ? null
+                : (v) => setState(() => _selected = v ?? -1),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ...List.generate(q.options.length, (i) {
+                  final isCorrectOption = _checked && i == q.correctIndex;
+                  final isWrongPick = _checked && i == _selected && wrong;
+                  return Card(
+                    color: isCorrectOption
+                        ? Colors.green.withValues(alpha: 0.12)
+                        : isWrongPick
+                            ? Colors.red.withValues(alpha: 0.10)
+                            : null,
+                    margin: const EdgeInsets.only(bottom: 6),
+                    child: RadioListTile<int>(
+                      value: i,
+                      title: Text(q.options[i],
+                          style: const TextStyle(height: 1.7)),
+                    ),
+                  );
+                }),
+              ],
+            ),
+          ),
           const SizedBox(height: 8),
           if (_checked) ...[
             Card(

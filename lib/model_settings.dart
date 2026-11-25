@@ -165,20 +165,27 @@ class _ModelSettingsSectionState extends State<ModelSettingsSection> {
           value: _enabled,
           onChanged: _setEnabled,
         ),
-        ...localModelSpecs.map(
-          (spec) => RadioListTile<LocalModelSpec>(
-            title: Text(
-              state.language == 'ar'
-                  ? spec.displayNameAr
-                  : spec.displayNameEn,
-            ),
-            subtitle: Text(
-              '${tr(state, 'model_size')}: ${formatBytes(spec.approxBytes)}'
-              ' — ${tr(state, 'model_ram')}: ${formatBytes(spec.minRamBytes)}',
-            ),
-            value: spec,
-            groupValue: _spec,
-            onChanged: _busy ? null : (v) => v != null ? _selectModel(v) : null,
+        RadioGroup<LocalModelSpec>(
+          groupValue: _spec,
+          onChanged: _busy ? null : (v) => v != null ? _selectModel(v) : null,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ...localModelSpecs.map(
+                (spec) => RadioListTile<LocalModelSpec>(
+                  title: Text(
+                    state.language == 'ar'
+                        ? spec.displayNameAr
+                        : spec.displayNameEn,
+                  ),
+                  subtitle: Text(
+                    '${tr(state, 'model_size')}: ${formatBytes(spec.approxBytes)}'
+                    ' — ${tr(state, 'model_ram')}: ${formatBytes(spec.minRamBytes)}',
+                  ),
+                  value: spec,
+                ),
+              ),
+            ],
           ),
         ),
         const SizedBox(height: 4),
