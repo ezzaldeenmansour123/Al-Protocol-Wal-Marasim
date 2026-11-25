@@ -529,11 +529,12 @@ const _strings = {
   'about_contact': {'ar': 'التواصل', 'en': 'Contact'},
   'about_email_label': {'ar': 'البريد الإلكتروني', 'en': 'Email'},
   'about_phone_label': {'ar': 'رقم التواصل', 'en': 'Contact number'},
+  'about_github_label': {'ar': 'حساب GitHub', 'en': 'GitHub account'},
   'about_owner': {'ar': 'صاحب التطبيق', 'en': 'App owner'},
   'about_owner_name': {'ar': 'أسعد منصور', 'en': 'Asaad Mansour'},
   'about_dev': {
-    'ar': 'البرمجة والتصميم والتطوير',
-    'en': 'Programming, design & development'
+    'ar': 'برمجة وتصميم',
+    'en': 'Programming & design'
   },
   'about_dev_name': {'ar': 'عز الدين منصور', 'en': 'Ezzaldeen Mansour'},
   'about_goals': {'ar': 'أهداف التطبيق', 'en': 'App goals'},
