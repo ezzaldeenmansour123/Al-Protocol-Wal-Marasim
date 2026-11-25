@@ -1005,9 +1005,10 @@ class _QuizPageState extends State<QuizPage> {
           const SizedBox(height: 12),
           RadioGroup<int>(
             groupValue: _selected,
-            onChanged: _checked
-                ? null
-                : (v) => setState(() => _selected = v ?? -1),
+            onChanged: (v) {
+              if (_checked) return;
+              setState(() => _selected = v ?? -1);
+            },
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
