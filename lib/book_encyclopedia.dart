@@ -342,7 +342,7 @@ class _BookEncyclopediaViewState extends State<BookEncyclopediaView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
+                const Row(
                   children: [
                     const Icon(Icons.menu_book, color: AppColors.gold),
                     const SizedBox(width: 8),
@@ -721,18 +721,18 @@ class KbTopicReaderPage extends StatelessWidget {
                     )),
                 const SizedBox(height: 10),
               ],
-              _bookTextSection('الخلاصة — من قاعدة المعرفة', t.summary),
-              _bookTextSection('التعريف — من قاعدة المعرفة', t.definition),
-              _bookTextSection('الشرح — من قاعدة المعرفة', t.explanation),
-              _bookListSection(
+              ..._bookTextSection('الخلاصة — من قاعدة المعرفة', t.summary),
+              ..._bookTextSection('التعريف — من قاعدة المعرفة', t.definition),
+              ..._bookTextSection('الشرح — من قاعدة المعرفة', t.explanation),
+              ..._bookListSection(
                   'القواعد والمبادئ — من قاعدة المعرفة', t.rulesJson),
-              _bookListSection(
+              ..._bookListSection(
                   'الإجراءات العملية — من قاعدة المعرفة', t.proceduresJson),
-              _bookListSection(
+              ..._bookListSection(
                   'أمثلة — من قاعدة المعرفة حيثما وردت', t.examplesJson),
-              _bookListSection('أخطاء شائعة — من قاعدة المعرفة حيثما وردت',
+              ..._bookListSection('أخطاء شائعة — من قاعدة المعرفة حيثما وردت',
                   t.mistakesJson),
-              _bookListSection(
+              ..._bookListSection(
                   'نقاط أساسية — من قاعدة المعرفة', t.keyPointsJson),
             ],
             const SizedBox(height: 16),
