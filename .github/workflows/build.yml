@@ -31,6 +31,13 @@ jobs:
           python3 tools/build_db.py tools/seed assets/marasim.db
           ls -lh assets/marasim.db assets/marasim.db.sha256
 
+      - name: Install Python build tools
+        # Install with the SAME interpreter that runs the build scripts
+        # (python3 -m pip). A bare `pip` on the runner targets a different
+        # Python, which is why the first builds failed with
+        # "No module named 'fontTools'" even though pip reported success.
+        run: python3 -m pip install -q --break-system-packages fonttools pillow
+
       - name: Download Amiri and Cairo fonts
         run: |
           mkdir -p assets/fonts
@@ -39,7 +46,7 @@ jobs:
           # validated as real TTFs; a failed download fails the build
           # instead of producing a broken APK without fonts.
           python3 - <<'PY'
-          import os, subprocess
+          import os, subprocess, sys
           from urllib.request import Request, urlopen
           def fetch(url, dest):
               req = Request(url, headers={"User-Agent": "Mozilla/5.0"})
@@ -58,7 +65,7 @@ jobs:
           except Exception as exc:
               raise RuntimeError(f"Amiri download failed ({exc}); fonts are not committed in the repo, so the build cannot continue without them")
           try:
-              subprocess.run(["pip", "install", "-q", "fonttools"], check=True)
+              subprocess.run([sys.executable, "-m", "pip", "install", "-q", "--break-system-packages", "fonttools"], check=True)
               fetch("https://github.com/google/fonts/raw/main/ofl/cairo/Cairo%5Bslnt%2Cwght%5D.ttf", "/tmp/Cairo-VF.ttf")
               for weight, name in ((400, "Cairo-Regular.ttf"), (700, "Cairo-Bold.ttf")):
                   subprocess.run(["python3", "-m", "fontTools.varLib.instancer",
@@ -76,7 +83,7 @@ jobs:
 
       - name: Download hero photos
         run: |
-          pip install -q pillow
+          python3 -m pip install -q --break-system-packages pillow
           mkdir -p assets/images
           python3 - <<'PY'
           import os
@@ -119,7 +126,7 @@ jobs:
 
       - name: Generate app logo (assets/logo.png)
         run: |
-          pip install -q pillow
+          python3 -m pip install -q --break-system-packages pillow
           python3 - <<'PY'
           import sys
           sys.path.insert(0, 'tools')
